@@ -21,12 +21,17 @@ SECRET_KEY = config('SECRET_KEY', default='django-insecure-your-secret-key-here-
 # =============================================================================
 # MODO DESARROLLO/PRODUCCIÓN
 # =============================================================================
-DEBUG = config('DEBUG', default=True, cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool)  # Cambiado a False por defecto
 
 # =============================================================================
-# HOSTS PERMITIDOS
+# HOSTS PERMITIDOS - MEJORADO PARA RAILWAY
 # =============================================================================
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1,.railway.app').split(',')
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1,.railway.app,.up.railway.app').split(',')
+
+# Agregar host de Railway si existe (MEJORA)
+RAILWAY_PUBLIC_DOMAIN = os.environ.get('RAILWAY_PUBLIC_DOMAIN')
+if RAILWAY_PUBLIC_DOMAIN and RAILWAY_PUBLIC_DOMAIN not in ALLOWED_HOSTS:
+    ALLOWED_HOSTS.append(RAILWAY_PUBLIC_DOMAIN)
 
 # =============================================================================
 # APLICACIONES INSTALADAS
@@ -91,14 +96,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'gimnasio_project.wsgi.application'
 
 # =============================================================================
-# BASE DE DATOS
+# BASE DE DATOS - MEJORADO PARA RAILWAY
 # =============================================================================
-DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL', default='sqlite:///db.sqlite3'),
-        conn_max_age=600
-    )
-}
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=os.environ.get('DATABASE_URL'),
+            conn_max_age=600,
+            ssl_require=True  # Importante para Railway
+        )
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 # =============================================================================
 # VALIDACIÓN DE CONTRASEÑAS
@@ -153,66 +167,61 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/admin/login/'
 
 # =============================================================================
-# CONFIGURACIÓN DE SEGURIDAD - CRÍTICO PARA HTTPS/HTTP
+# CONFIGURACIÓN DE SEGURIDAD - MEJORADA PARA RAILWAY
 # =============================================================================
-# ESTA SECCIÓN ESTÁ OPTIMIZADA PARA FUNCIONAR EN DESARROLLO (HTTP)
-# Y AUTOMÁTICAMENTE SE ACTIVARÁ EN PRODUCCIÓN (HTTPS)
+# Configuración del proxy (IMPORTANTE para Railway)
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+USE_X_FORWARDED_HOST = True
+USE_X_FORWARDED_PORT = True
 
+# CSRF Trusted Origins - MEJORADO
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    'https://*.railway.app',
+    'https://*.up.railway.app',
+]
+
+if RAILWAY_PUBLIC_DOMAIN:
+    CSRF_TRUSTED_ORIGINS.append('https://' + RAILWAY_PUBLIC_DOMAIN)
+
+# Configuración de seguridad según DEBUG
 if DEBUG:
     # ========================================================================
-    # MODO DESARROLLO - SOLO HTTP (SOLUCIÓN PARA TU PROBLEMA)
+    # MODO DESARROLLO
     # ========================================================================
-    
-    # Desactivar redirección HTTPS (¡ESTA ES LA CLAVE!)
     SECURE_SSL_REDIRECT = False
-    
-    # Cookies NO seguras (funcionan en HTTP)
     SESSION_COOKIE_SECURE = False
     CSRF_COOKIE_SECURE = False
-    
-    # Desactivar HSTS completamente
     SECURE_HSTS_SECONDS = 0
     SECURE_HSTS_INCLUDE_SUBDOMAINS = False
     SECURE_HSTS_PRELOAD = False
     
-    # No usar cabeceras de proxy en desarrollo
-    SECURE_PROXY_SSL_HEADER = None
-    
-    # Otras configuraciones de seguridad (no afectan HTTP/HTTPS)
+    # Seguridad básica
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     X_FRAME_OPTIONS = 'DENY'
     
 else:
     # ========================================================================
-    # MODO PRODUCCIÓN - HTTPS OBLIGATORIO
+    # MODO PRODUCCIÓN (RAILWAY)
     # ========================================================================
-    
-    # Redirección forzosa a HTTPS
     SECURE_SSL_REDIRECT = True
-    
-    # Cookies seguras (solo HTTPS)
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
+    CSRF_COOKIE_HTTPONLY = True
+    CSRF_COOKIE_SAMESITE = 'Lax'
+    SESSION_COOKIE_SAMESITE = 'Lax'
     
-    # HSTS - Forzar HTTPS en el navegador por 1 año
-    SECURE_HSTS_SECONDS = 31536000  # 1 año
+    # HSTS
+    SECURE_HSTS_SECONDS = 31536000
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
-    
-    # Configuración para cuando estás detrás de un proxy (como Railway)
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     
     # Seguridad adicional
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     X_FRAME_OPTIONS = 'DENY'
-    
-    # Trusted origins para CSRF
-    CSRF_TRUSTED_ORIGINS = [
-        'https://' + host for host in ALLOWED_HOSTS 
-        if host not in ['localhost', '127.0.0.1']
-    ]
 
 # =============================================================================
 # CONFIGURACIÓN DE LOGGING
