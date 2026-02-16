@@ -1,1 +1,1 @@
-web: gunicorn gimnasio_project.wsgi
+web: gunicorn tu_proyecto.wsgi --bind 0.0.0.0:$PORT
