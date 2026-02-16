@@ -1,0 +1,360 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="mb-4">Dashboard</h1>
+    </div>
+</div>
+
+<!-- Tarjetas de estadísticas -->
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card text-white bg-primary">
+            <div class="card-body">
+                <h5 class="card-title">Total Clientes</h5>
+                <p class="card-text display-4">{{ total_clientes }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-success">
+            <div class="card-body">
+                <h5 class="card-title">Clientes Activos</h5>
+                <p class="card-text display-4">{{ clientes_activos }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-info">
+            <div class="card-body">
+                <h5 class="card-title">Membresías Activas</h5>
+                <p class="card-text display-4">{{ membresias_activas }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-warning">
+            <div class="card-body">
+                <h5 class="card-title">Entradas Hoy</h5>
+                <p class="card-text display-4">{{ entradas_hoy }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SECCIÓN DE MEMBRESÍAS CORREGIDA -->
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                    <i class="bi bi-credit-card"></i>
+                    Gestión de Membresías
+                </h5>
+                <span class="badge bg-light text-dark">{{ proximas_vencer|length }} por vencer | {{ membresias_vencidas|length }} vencidas</span>
+            </div>
+            <div class="card-body p-0">
+                <!-- Contenedor para el grupo de collapses -->
+                <div class="accordion" id="membresiasAccordion">
+                    <!-- Botones de control -->
+                    <div class="p-3 bg-light border-bottom d-flex gap-2 flex-wrap">
+                        <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProximas" aria-expanded="true" aria-controls="collapseProximas">
+                            <i class="fa fa-exclamation-triangle"></i> 
+                            Próximas a vencer <span class="badge bg-dark">{{ proximas_vencer|length }}</span>
+                        </button>
+                        <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVencidas" aria-expanded="false" aria-controls="collapseVencidas">
+                            <i class="fa fa-calendar-times"></i> 
+                            Vencidas <span class="badge bg-dark">{{ membresias_vencidas|length }}</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Panel de Próximas a Vencer -->
+                    <div id="collapseProximas" class="collapse show" data-bs-parent="#membresiasAccordion">
+                        <div class="p-3">
+                            <h6 class="text-warning mb-3">
+                                <i class="bi bi-exclamation-triangle-fill"></i> 
+                                Membresías por Vencer (Próximos 7 días)
+                            </h6>
+                            {% if proximas_vencer %}
+                                <div class="table-responsive">
+                                    <table class="table table-sm table-hover">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Cliente</th>
+                                                <th>Teléfono</th>
+                                                <th>Tipo</th>
+                                                <th>Vence</th>
+                                                <th>Días</th>
+                                                <th style="min-width: 100px;">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for membresia in proximas_vencer %}
+                                            <tr>
+                                                <td>
+                                                    <strong>{{ membresia.cliente.nombre }} {{ membresia.cliente.apellidos }}</strong>
+                                                </td>
+                                                <td>{{ membresia.cliente.telefono }}</td>
+                                                <td>
+                                                    <span class="badge bg-info">{{ membresia.get_tipo_display }}</span>
+                                                </td>
+                                                <td>{{ membresia.fecha_fin|date:"d/m/Y" }}</td>
+                                                <td>
+                                                    <span class="badge bg-warning text-dark">{{ membresia.fecha_fin|timeuntil }}</span>
+                                                </td>
+                                                <td>
+                                                    <a href="{% url 'detalle_cliente' membresia.cliente.pk %}" class="btn btn-outline-info btn-sm" title="Ver detalle">
+                                                        <i class="fa fa-eye"></i>
+                                                    </a>
+                                                    <a href="{% url 'nueva_membresia_cliente' membresia.cliente.pk %}" class="btn btn-outline-primary btn-sm" title="Renovar membresía">
+                                                        <i class="fa fa-id-card"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            {% else %}
+                                <div class="alert alert-light text-center py-4">
+                                    <i class="bi bi-check-circle-fill text-success fs-1 d-block mb-2"></i>
+                                    <p class="mb-0">No hay membresías próximas a vencer</p>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <!-- Panel de Vencidas -->
+                    <div id="collapseVencidas" class="collapse" data-bs-parent="#membresiasAccordion">
+                        <div class="p-3">
+                            <h6 class="text-danger mb-3">
+                                <i class="bi bi-calendar-x-fill"></i> 
+                                Membresías Vencidas (Últimos 30 días)
+                            </h6>
+                            {% if membresias_vencidas %}
+                                <div class="table-responsive">
+                                    <table class="table table-sm table-hover">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Cliente</th>
+                                                <th>Teléfono</th>
+                                                <th>Tipo</th>
+                                                <th>Venció</th>
+                                                <th>Días vencida</th>
+                                                <th style="min-width: 100px;">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for membresia in membresias_vencidas %}
+                                            <tr>
+                                                <td>
+                                                    <strong>{{ membresia.cliente.nombre }} {{ membresia.cliente.apellidos }}</strong>
+                                                </td>
+                                                <td>{{ membresia.cliente.telefono }}</td>
+                                                <td>
+                                                    <span class="badge bg-secondary">{{ membresia.get_tipo_display }}</span>
+                                                </td>
+                                                <td class="text-danger">{{ membresia.fecha_fin|date:"d/m/Y" }}</td>
+                                                <td>
+                                                    <span class="badge bg-danger">{{ membresia.dias_vencida }} días</span>
+                                                </td>
+                                                <td>
+                                                    <div class="btn-group btn-group-sm" role="group">
+                                                        <a href="{% url 'detalle_cliente' membresia.cliente.pk %}" 
+                                                           class="btn btn-outline-info"
+                                                           title="Ver detalle">
+                                                            <i class="fa fa-eye"></i>
+                                                        </a>
+                                                        <a href="{% url 'nueva_membresia_cliente' membresia.cliente.pk %}" 
+                                                           class="btn btn-outline-success"
+                                                           title="Activar nueva membresía">
+                                                            <i class="fa fa-id-card"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            {% else %}
+                                <div class="alert alert-light text-center py-4">
+                                    <i class="bi bi-emoji-smile-fill text-success fs-1 d-block mb-2"></i>
+                                    <p class="mb-0">No hay membresías vencidas en los últimos 30 días</p>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Fila de ingresos con función mostrar/ocultar -->
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                    <i class="bi bi-cash-stack"></i>
+                    Ingresos del Mes
+                </h5>
+                <button class="btn btn-light btn-sm" id="toggleIngresos" title="Mostrar/Ocultar monto">
+                    <i class="fa fa-eye"></i> 
+                    <span id="textoBoton">Ocultar</span>
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <h2 class="text-success mb-0 me-3" id="montoIngresos">${{ ingresos_mes|floatformat:2 }}</h2>
+                    <h2 class="text-success mb-0 me-3" id="montoOculto" style="display: none;">********</h2>
+                </div>
+                <p class="text-muted mb-0 mt-2">
+                    <i class="bi bi-calendar"></i> 
+                    {{ timezone.now|date:"F Y" }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script para mejorar la experiencia -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar todos los tooltips de Bootstrap
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[title]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+    
+    // Función para mostrar/ocultar ingresos
+    const toggleIngresos = document.getElementById('toggleIngresos');
+    const montoIngresos = document.getElementById('montoIngresos');
+    const montoOculto = document.getElementById('montoOculto');
+    const iconoOjo = toggleIngresos.querySelector('i');
+    const textoBoton = document.getElementById('textoBoton');
+    
+    // Verificar si hay un estado guardado en localStorage
+    const ingresosVisible = localStorage.getItem('ingresosVisible');
+    
+    // Si hay un estado guardado, aplicarlo
+    if (ingresosVisible === 'false') {
+        montoIngresos.style.display = 'none';
+        montoOculto.style.display = 'block';
+        iconoOjo.classList.remove('fa-eye');
+        iconoOjo.classList.add('fa-eye-slash');
+        textoBoton.textContent = 'Mostrar';
+    }
+    
+    // Agregar evento al botón de ingresos
+    if (toggleIngresos) {
+        toggleIngresos.addEventListener('click', function() {
+            if (montoIngresos.style.display === 'none') {
+                // Mostrar monto
+                montoIngresos.style.display = 'block';
+                montoOculto.style.display = 'none';
+                iconoOjo.classList.remove('fa-eye-slash');
+                iconoOjo.classList.add('fa-eye');
+                textoBoton.textContent = 'Ocultar';
+                localStorage.setItem('ingresosVisible', 'true');
+            } else {
+                // Ocultar monto
+                montoIngresos.style.display = 'none';
+                montoOculto.style.display = 'block';
+                iconoOjo.classList.remove('fa-eye');
+                iconoOjo.classList.add('fa-eye-slash');
+                textoBoton.textContent = 'Mostrar';
+                localStorage.setItem('ingresosVisible', 'false');
+            }
+        });
+    }
+
+    // Asegurar que los collapses funcionen correctamente
+    var collapseProximas = document.getElementById('collapseProximas');
+    var collapseVencidas = document.getElementById('collapseVencidas');
+    
+    if (collapseProximas && collapseVencidas) {
+        collapseProximas.addEventListener('show.bs.collapse', function () {
+            // No hacer nada especial, Bootstrap maneja esto automáticamente
+        });
+        
+        collapseVencidas.addEventListener('show.bs.collapse', function () {
+            // No hacer nada especial, Bootstrap maneja esto automáticamente
+        });
+    }
+});
+</script>
+
+<style>
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .table td, .table th {
+        vertical-align: middle;
+    }
+    
+    .badge {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+    }
+    
+    .btn-group {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .btn-group .btn {
+        border: 1px solid #dee2e6;
+    }
+    
+    .btn-group .btn:hover {
+        transform: translateY(-1px);
+        transition: transform 0.2s;
+    }
+    
+    .gap-2 {
+        gap: 0.5rem !important;
+    }
+    
+    .flex-wrap {
+        flex-wrap: wrap !important;
+    }
+    
+    /* Estilos para los botones principales */
+    .btn-warning, .btn-danger {
+        min-width: 180px;
+        font-weight: 500;
+    }
+    
+    .btn-warning .badge, .btn-danger .badge {
+        margin-left: 8px;
+        background-color: rgba(0,0,0,0.2) !important;
+    }
+    
+    /* Animación suave para los collapses */
+    .collapse {
+        transition: all 0.3s ease;
+    }
+    
+    /* Estilo para el botón de mostrar/ocultar */
+    #toggleIngresos {
+        transition: all 0.2s ease;
+    }
+    
+    #toggleIngresos:hover {
+        transform: scale(1.05);
+    }
+    
+    #montoIngresos, #montoOculto {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    /* Asegurar que los botones pequeños tengan buen espaciado */
+    .btn-sm {
+        margin: 2px;
+    }
+</style>
+{% endblock %}

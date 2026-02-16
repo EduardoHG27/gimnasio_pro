@@ -1,0 +1,141 @@
+<!-- templates/gimnasio/historial_entradas.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="mb-4">
+                <i class="bi bi-clock-history"></i> 
+                Historial de Entradas
+            </h1>
+        </div>
+    </div>
+    
+    <!-- Filtros -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">
+                <i class="bi bi-funnel"></i> Filtros
+            </h5>
+        </div>
+        <div class="card-body">
+            <form method="get" class="row g-3">
+                <div class="col-md-3">
+                    <label for="cliente" class="form-label">Cliente</label>
+                    <select name="cliente" id="cliente" class="form-select">
+                        <option value="">Todos</option>
+                        {% for cliente in clientes %}
+                            <option value="{{ cliente.id }}" {% if request.GET.cliente == cliente.id|stringformat:"s" %}selected{% endif %}>
+                                {{ cliente.nombre }} {{ cliente.apellidos }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="fecha_inicio" class="form-label">Fecha Inicio</label>
+                    <input type="date" name="fecha_inicio" id="fecha_inicio" 
+                           class="form-control" value="{{ request.GET.fecha_inicio }}">
+                </div>
+                <div class="col-md-3">
+                    <label for="fecha_fin" class="form-label">Fecha Fin</label>
+                    <input type="date" name="fecha_fin" id="fecha_fin" 
+                           class="form-control" value="{{ request.GET.fecha_fin }}">
+                </div>
+                <div class="col-md-3 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary me-2">
+                        <i class="bi bi-search"></i> Filtrar
+                    </button>
+                    <a href="{% url 'historial_entradas' %}" class="btn btn-secondary">
+                        <i class="bi bi-eraser"></i> Limpiar
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Tabla de entradas -->
+    <div class="card">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Registros de Entrada</h5>
+            <span class="badge bg-light text-dark">{{ entradas|length }} entradas</span>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th>#</th>
+                            <th>Cliente</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Fecha y Hora</th>
+                            <th>Estado Membresía</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for entrada in entradas %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>
+                                <strong>{{ entrada.cliente.nombre }} {{ entrada.cliente.apellidos }}</strong>
+                            </td>
+                            <td>{{ entrada.cliente.email }}</td>
+                            <td>{{ entrada.cliente.telefono }}</td>
+                            <td>
+                                {{ entrada.fecha_entrada|date:"d/m/Y" }}<br>
+                                <small class="text-muted">{{ entrada.fecha_entrada|date:"H:i:s" }}</small>
+                            </td>
+                            <td>
+                                {% with entrada.cliente.membresias.all as membresias %}
+                                    {% with hoy=entrada.fecha_entrada.date %}
+                                        {% with membresias|dictsortreversed:"fecha_inicio"|first as ultima_membresia %}
+                                            {% if ultima_membresia %}
+                                                {% if ultima_membresia.pagado and ultima_membresia.fecha_inicio <= hoy and ultima_membresia.fecha_fin >= hoy %}
+                                                    <span class="badge bg-success">Activa</span>
+                                                    <small class="d-block text-success">
+                                                        Vence: {{ ultima_membresia.fecha_fin|date:"d/m/Y" }}
+                                                    </small>
+                                                {% elif ultima_membresia.fecha_fin < hoy %}
+                                                    <span class="badge bg-danger">Vencida</span>
+                                                {% else %}
+                                                    <span class="badge bg-warning text-dark">Pendiente</span>
+                                                {% endif %}
+                                            {% else %}
+                                                <span class="badge bg-secondary">Sin membresía</span>
+                                            {% endif %}
+                                        {% endwith %}
+                                    {% endwith %}
+                                {% endwith %}
+                            </td>
+                            <td>
+                                <a href="{% url 'detalle_cliente' entrada.cliente.pk %}" 
+                                   class="btn btn-sm btn-info"
+                                   title="Ver detalle del cliente">
+                                    <i class="fa fa-eye" ></i>
+                                </a>
+                                {% if not entrada.cliente.membresias.all|dictsortreversed:"fecha_inicio"|first %}
+                                    <a href="{% url 'nueva_membresia_cliente' entrada.cliente.pk %}" 
+                                       class="btn btn-sm btn-success"
+                                       title="Registrar membresía">
+                                        <i class="fa fa-plus-circle"></i>
+                                    </a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="7" class="text-center text-muted py-5">
+                                <i class="bi bi-inbox fs-1 d-block mb-3"></i>
+                                No hay entradas registradas
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <h1>Lista de Clientes</h1>
+    </div>
+    <div class="col-md-6 text-end">
+        <a href="{% url 'nuevo_cliente' %}" class="btn btn-primary">Nuevo Cliente</a>
+        <a href="{% url 'exportar_clientes' %}" class="btn btn-success">Exportar a Excel</a>
+    </div>
+</div>
+
+<div class="table-responsive mt-3">
+    <table class="table table-striped table-hover" id="tabla-clientes">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Fecha Registro</th>
+                <th>Membresía</th>
+                <th>Fecha Vencimiento</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente.nombre }} {{ cliente.apellidos }}</td>
+                <td>{{ cliente.telefono }}</td>
+                <td>{{ cliente.email }}</td>
+                <td data-order="{{ cliente.fecha_registro|date:'Ymd' }}">{{ cliente.fecha_registro|date:"d/m/Y" }}</td>
+                <td>
+                    {% if cliente.tipo_membresia %}
+                        <span class="badge {% if cliente.es_activa %}bg-info{% else %}bg-secondary{% endif %}">
+                            {{ cliente.tipo_membresia }}
+                        </span>
+                    {% else %}
+                        <span class="badge bg-secondary">Sin membresía</span>
+                    {% endif %}
+                </td>
+                <td data-order="{{ cliente.fecha_vencimiento|date:'Ymd' }}">
+                    {% if cliente.fecha_vencimiento %}
+                        {{ cliente.fecha_vencimiento|date:"d/m/Y" }}
+                        {% if cliente.es_activa %}
+                            {% if cliente.dias_restantes <= 5 %}
+                                <span class="badge bg-warning text-dark">¡{{ cliente.dias_restantes }} días!</span>
+                            {% elif cliente.dias_restantes <= 0 %}
+                                <span class="badge bg-danger">Vence hoy</span>
+                            {% endif %}
+                        {% else %}
+                            {% if cliente.dias_vencida %}
+                                <span class="badge bg-danger">Vencida hace {{ cliente.dias_vencida }} días</span>
+                            {% else %}
+                                <span class="badge bg-danger">Vencida</span>
+                            {% endif %}
+                        {% endif %}
+                    {% else %}
+                        <span class="text-muted">---</span>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if cliente.activo %}
+                    <span class="badge bg-success">Activo</span>
+                    {% else %}
+                    <span class="badge bg-danger">Inactivo</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{% url 'detalle_cliente' cliente.pk %}" class="btn btn-sm btn-info"><i class="fa fa-eye" title="Ver detalle del cliente"></i></a>
+                    <a href="{% url 'editar_cliente' cliente.pk %}" class="btn btn-sm btn-warning"><i class="fa fa-pencil" title="Editar cliente"></i></a>
+                    
+                    {% if not cliente.es_activa %}
+                        <a href="{% url 'nueva_membresia_cliente' cliente.pk %}" class="btn btn-sm btn-success"><i class="fa fa-id-card" title="Renovar membresía"></i></i></a>
+                    {% else %}
+                        {% if cliente.dias_restantes <= 5 %}
+                            <a href="{% url 'nueva_membresia_cliente' cliente.pk %}" class="btn btn-sm btn-warning"><i class="fa fa-id-card"></i></a>
+                        {% endif %}
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="8" class="text-center">No hay clientes registrados</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Agregar DataTables CSS y JS en base.html o aquí -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('#tabla-clientes').DataTable({
+        language: {
+            url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
+        },
+        order: [[0, 'asc']],
+        pageLength: 10,
+        lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "Todos"]],
+        columnDefs: [
+            { orderable: false, targets: [7] }, // Acciones no ordenable
+            { searchable: false, targets: [7] }  // Acciones no buscable
+        ]
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,273 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h1 class="text-center mb-4">
+            <i class="fa fa-box-arrow-in-right"></i> 
+            Registro de Entrada
+        </h1>
+        
+        <!-- Mensajes del sistema -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{% if message.tags == 'warning' %}warning{% else %}success{% endif %} alert-dismissible fade show" role="alert">
+                    {{ message|safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+        
+        <!-- Información del cliente buscado -->
+        {% if cliente_info %}
+            <div class="card mb-4 {% if cliente_info.tiene_membresia_activa %}border-success{% else %}border-danger{% endif %}">
+                <div class="card-header {% if cliente_info.tiene_membresia_activa %}bg-success text-white{% else %}bg-danger text-white{% endif %}">
+                    <h5 class="mb-0">
+                        <i class="fa fa-person-circle"></i> 
+                        Cliente: {{ cliente_info.nombre }}
+                    </h5>
+                </div>
+                <div class="card-body">
+                    {% if cliente_info.tiene_membresia_activa %}
+                        <!-- CLIENTE ACTIVO - CON MEMBRESÍA VIGENTE -->
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="alert alert-success mb-0">
+                                    <i class="fa fa-check-circle-fill"></i>
+                                    <strong>¡Membresía activa!</strong><br>
+                                    Tipo: {{ cliente_info.tipo_membresia }}<br>
+                                    Vence: {{ cliente_info.fecha_fin|date:"d/m/Y" }}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-info text-white">
+                                    <div class="card-body text-center">
+                                        <h3 class="display-4">{{ cliente_info.dias_restantes }}</h3>
+                                        <p class="mb-0">días restantes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <a href="{% url 'nueva_membresia_cliente' cliente_info.cliente_id %}" 
+                               class="btn btn-primary">
+                                <i class="fa fa-arrow-repeat"></i> 
+                                Renovar Membresía
+                            </a>
+                            <a href="{% url 'detalle_cliente' cliente_info.cliente_id %}" 
+                               class="btn btn-outline-secondary">
+                                <i class="fa fa-eye"></i> 
+                                Ver Detalle
+                            </a>
+                        </div>
+                    
+                    {% else %}
+                        <!-- CLIENTE INACTIVO - SIN MEMBRESÍA VIGENTE -->
+                        <div class="alert alert-danger">
+                            <i class="fa fa-exclamation-triangle-fill"></i>
+                            <strong>¡Cliente sin membresía activa!</strong>
+                            <p class="mb-0 mt-2">
+                                Motivo: 
+                                {% if cliente_info.motivo == 'membresía vencida' %}
+                                    La membresía del cliente venció hace 
+                                    <strong>{{ cliente_info.dias_vencida }} días</strong> 
+                                    ({{ cliente_info.fecha_fin|date:"d/m/Y" }})
+                                {% elif cliente_info.motivo == 'membresía pendiente de pago' %}
+                                    El cliente tiene una membresía pendiente de pago
+                                {% else %}
+                                    El cliente no tiene ninguna membresía registrada
+                                {% endif %}
+                            </p>
+                        </div>
+                        
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <h6 class="card-title"><i class="fa fa-info-circle"></i> Información de contacto</h6>
+                                        <p class="mb-1"><strong>Email:</strong> {{ cliente_info.email }}</p>
+                                        <p class="mb-0"><strong>Teléfono:</strong> {{ cliente_info.telefono }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {% if cliente_info.ultima_membresia %}
+                            <div class="col-md-6">
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <h6 class="card-title"><i class="fa fa-clock-history"></i> Última membresía</h6>
+                                        <p class="mb-1"><strong>Tipo:</strong> {{ cliente_info.tipo_membresia }}</p>
+                                        <p class="mb-0"><strong>Venció:</strong> {{ cliente_info.fecha_fin|date:"d/m/Y" }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mt-3 d-flex gap-2">
+                            <a href="{% url 'nueva_membresia_cliente' cliente_info.cliente_id %}" 
+                               class="btn btn-success">
+                                <i class="fa fa-plus-circle"></i> 
+                                Activar Nueva Membresía
+                            </a>
+                            <a href="{% url 'detalle_cliente' cliente_info.cliente_id %}" 
+                               class="btn btn-outline-secondary">
+                                <i class="fa fa-eye"></i> 
+                                Ver Detalle
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>  <!-- ← Cierre correcto del card-body -->
+            </div>      <!-- ← Cierre correcto de la card -->
+        {% endif %}     <!-- ← Cierre correcto de if cliente_info -->
+        
+        <!-- Formulario de búsqueda -->
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">
+                    <i class="fa fa-search"></i> 
+                    Buscar Cliente por Email
+                </h5>
+            </div>
+            <div class="card-body">
+                <form method="post" id="busqueda-form">
+                    {% csrf_token %}
+                    
+                    <div class="input-group input-group-lg">
+                        <input type="email" 
+                               name="email" 
+                               class="form-control" 
+                               placeholder="Ingrese el email del cliente" 
+                               required 
+                               id="id_email"
+                               value="{{ email_buscado|default:'' }}">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-search"></i> Buscar
+                        </button>
+                    </div>
+                    <div class="form-text mt-2">
+                        <i class="fa fa-info-circle"></i> 
+                        Ingrese el email registrado del cliente para verificar su membresía
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Últimos registros -->
+        <div class="card">
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                    <i class="fa fa-clock-history"></i> 
+                    Últimos Registros
+                </h5>
+                <span class="badge bg-light text-dark">{{ ultimos_registros|length }} registros</span>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-sm table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Estado</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for registro in ultimos_registros %}
+                            <tr>
+                                <td>
+                                    <strong>{{ registro.cliente.nombre }} {{ registro.cliente.apellidos }}</strong>
+                                </td>
+                                <td>{{ registro.fecha_entrada|date:"d/m/Y" }}</td>
+                                <td>{{ registro.fecha_entrada|date:"H:i:s" }}</td>
+                                <td>
+                                    {% if registro.membresia_activa %}
+                                        <span class="badge bg-success">Activa</span>
+                                    {% else %}
+                                        <span class="badge bg-danger">Sin membresía</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a href="{% url 'detalle_cliente' registro.cliente.pk %}" 
+                                       class="btn btn-sm btn-outline-info"
+                                       title="Ver detalle">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="5" class="text-center text-muted py-4">
+                                    <i class="fa fa-inbox fs-3 d-block"></i>
+                                    No hay registros recientes
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="text-end mt-3">
+                    <a href="{% url 'historial_entradas' %}" class="btn btn-sm btn-outline-primary">
+                        Ver historial completo <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script para auto-limpiar el formulario después de la búsqueda -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('busqueda-form');
+    const emailInput = document.getElementById('id_email');
+    
+    // Seleccionar el texto del input cuando se hace foco
+    emailInput.addEventListener('focus', function() {
+        this.select();
+    });
+    
+    // Si hay un email buscado, seleccionarlo para fácil reemplazo
+    {% if email_buscado %}
+        emailInput.select();
+    {% endif %}
+});
+</script>
+
+<style>
+    .display-4 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        line-height: 1;
+    }
+    
+    .card-header i {
+        margin-right: 5px;
+    }
+    
+    .alert {
+        border-left-width: 4px;
+    }
+    
+    .alert-success {
+        border-left-color: #28a745;
+    }
+    
+    .alert-warning {
+        border-left-color: #ffc107;
+    }
+    
+    .alert-danger {
+        border-left-color: #dc3545;
+    }
+    
+    .gap-2 {
+        gap: 0.5rem;
+    }
+</style>
+{% endblock %}

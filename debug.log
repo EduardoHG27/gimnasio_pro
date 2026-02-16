@@ -1,0 +1,1118 @@
+DEBUG 2026-02-13 18:44:17,319 models 16484 22096 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:44:17,322 models 16484 22096 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 18:44:17,322 models 16484 22096 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 18:44:17,325 models 16484 22096 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 18:44:17,326 models 16484 22096 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:44:17,329 models 16484 22096 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 18:44:17,330 models 16484 22096 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 18:44:17,331 models 16484 22096 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 18:44:17,331 models 16484 22096 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:44:17,336 models 16484 22096 No se encontró membresía activa
+DEBUG 2026-02-13 18:44:17,337 models 16484 22096 Total membresías del cliente: 1
+DEBUG 2026-02-13 18:44:17,338 models 16484 22096   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 18:44:17,338 models 16484 22096 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 18:44:17,339 models 16484 22096 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 18:44:17,339 models 16484 22096 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:44:17,343 models 16484 22096 No se encontró membresía activa
+DEBUG 2026-02-13 18:44:17,344 models 16484 22096 Total membresías del cliente: 1
+DEBUG 2026-02-13 18:44:17,345 models 16484 22096   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 18:44:17,346 models 16484 22096 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 18:44:17,346 models 16484 22096 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 18:44:17,347 models 16484 22096 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:44:17,349 models 16484 22096 No se encontró membresía activa
+DEBUG 2026-02-13 18:44:17,351 models 16484 22096 Total membresías del cliente: 1
+DEBUG 2026-02-13 18:44:17,353 models 16484 22096   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 18:44:17,355 models 16484 22096 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:44:17,357 models 16484 22096 No se encontró membresía activa
+DEBUG 2026-02-13 18:44:17,358 models 16484 22096 Total membresías del cliente: 1
+DEBUG 2026-02-13 18:44:17,360 models 16484 22096   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 18:44:17,361 models 16484 22096 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:44:17,363 models 16484 22096 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 18:44:17,363 models 16484 22096 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 18:44:17,363 models 16484 22096 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:44:17,365 models 16484 22096 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 18:44:17,365 models 16484 22096 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 18:44:17,787 views 16484 22096 ==================================================
+DEBUG 2026-02-13 18:44:17,787 views 16484 22096 INICIO - Vista registro_entrada
+DEBUG 2026-02-13 18:44:17,788 views 16484 22096 Método HTTP: GET
+DEBUG 2026-02-13 18:44:17,788 views 16484 22096 GET request - Mostrando formulario vacío
+DEBUG 2026-02-13 18:44:17,788 views 16484 22096 Obteniendo últimos 10 registros de entrada
+DEBUG 2026-02-13 18:44:17,791 views 16484 22096 Registros encontrados: 7
+DEBUG 2026-02-13 18:44:17,809 views 16484 22096 cliente_info final a enviar al template: None
+DEBUG 2026-02-13 18:44:17,809 views 16484 22096 email_buscado: None
+DEBUG 2026-02-13 18:44:17,809 views 16484 22096 FIN - Vista registro_entrada
+DEBUG 2026-02-13 18:44:17,810 views 16484 22096 ==================================================
+DEBUG 2026-02-13 18:44:18,933 views 16484 22096 ==================================================
+DEBUG 2026-02-13 18:44:18,933 views 16484 22096 INICIO - Vista registro_entrada
+DEBUG 2026-02-13 18:44:18,933 views 16484 22096 Método HTTP: GET
+DEBUG 2026-02-13 18:44:18,934 views 16484 22096 GET request - Mostrando formulario vacío
+DEBUG 2026-02-13 18:44:18,934 views 16484 22096 Obteniendo últimos 10 registros de entrada
+DEBUG 2026-02-13 18:44:18,936 views 16484 22096 Registros encontrados: 7
+DEBUG 2026-02-13 18:44:18,946 views 16484 22096 cliente_info final a enviar al template: None
+DEBUG 2026-02-13 18:44:18,946 views 16484 22096 email_buscado: None
+DEBUG 2026-02-13 18:44:18,947 views 16484 22096 FIN - Vista registro_entrada
+DEBUG 2026-02-13 18:44:18,948 views 16484 22096 ==================================================
+DEBUG 2026-02-13 18:44:22,412 views 16484 22096 ==================================================
+DEBUG 2026-02-13 18:44:22,412 views 16484 22096 INICIO - Vista registro_entrada
+DEBUG 2026-02-13 18:44:22,413 views 16484 22096 Método HTTP: POST
+DEBUG 2026-02-13 18:44:22,413 views 16484 22096 Procesando POST request
+DEBUG 2026-02-13 18:44:22,426 views 16484 22096 Formulario inválido - Errores: <ul class="errorlist"><li>email<ul class="errorlist"><li>Cliente no encontrado o inactivo</li></ul></li></ul>
+DEBUG 2026-02-13 18:44:22,426 views 16484 22096 Obteniendo últimos 10 registros de entrada
+DEBUG 2026-02-13 18:44:22,429 views 16484 22096 Registros encontrados: 7
+DEBUG 2026-02-13 18:44:22,443 views 16484 22096 cliente_info final a enviar al template: None
+DEBUG 2026-02-13 18:44:22,443 views 16484 22096 email_buscado: None
+DEBUG 2026-02-13 18:44:22,443 views 16484 22096 FIN - Vista registro_entrada
+DEBUG 2026-02-13 18:44:22,444 views 16484 22096 ==================================================
+DEBUG 2026-02-13 18:47:23,372 models 10764 5824 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:47:23,376 models 10764 5824 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 18:47:23,377 models 10764 5824 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 18:47:23,378 models 10764 5824 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 18:47:23,379 models 10764 5824 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:47:23,382 models 10764 5824 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 18:47:23,382 models 10764 5824 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 18:51:43,727 models 13612 17940 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:51:43,731 models 13612 17940 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 18:51:43,731 models 13612 17940 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 18:51:43,731 models 13612 17940 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 18:51:43,732 models 13612 17940 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:51:43,734 models 13612 17940 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 18:51:43,734 models 13612 17940 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 18:51:43,734 models 13612 17940 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 18:51:43,734 models 13612 17940 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:51:43,736 models 13612 17940 No se encontró membresía activa
+DEBUG 2026-02-13 18:51:43,738 models 13612 17940 Total membresías del cliente: 1
+DEBUG 2026-02-13 18:51:43,738 models 13612 17940   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 18:51:43,739 models 13612 17940 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 18:51:43,743 models 13612 17940 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 18:51:43,744 models 13612 17940 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:51:43,747 models 13612 17940 No se encontró membresía activa
+DEBUG 2026-02-13 18:51:43,749 models 13612 17940 Total membresías del cliente: 1
+DEBUG 2026-02-13 18:51:43,751 models 13612 17940   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 18:51:43,751 models 13612 17940 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 18:51:43,752 models 13612 17940 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 18:51:43,753 models 13612 17940 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:51:43,754 models 13612 17940 No se encontró membresía activa
+DEBUG 2026-02-13 18:51:43,755 models 13612 17940 Total membresías del cliente: 1
+DEBUG 2026-02-13 18:51:43,759 models 13612 17940   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 18:51:43,763 models 13612 17940 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:51:43,764 models 13612 17940 No se encontró membresía activa
+DEBUG 2026-02-13 18:51:43,766 models 13612 17940 Total membresías del cliente: 1
+DEBUG 2026-02-13 18:51:43,767 models 13612 17940   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 18:51:43,768 models 13612 17940 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:51:43,770 models 13612 17940 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 18:51:43,770 models 13612 17940 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 18:51:43,770 models 13612 17940 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:51:43,772 models 13612 17940 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 18:51:43,777 models 13612 17940 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 18:51:44,925 views 13612 17940 ==================================================
+DEBUG 2026-02-13 18:51:44,926 views 13612 17940 INICIO - Vista registro_entrada
+DEBUG 2026-02-13 18:51:44,926 views 13612 17940 Método HTTP: GET
+DEBUG 2026-02-13 18:51:44,926 views 13612 17940 GET request - Mostrando formulario vacío
+DEBUG 2026-02-13 18:51:44,926 views 13612 17940 Obteniendo últimos 10 registros de entrada
+DEBUG 2026-02-13 18:51:44,929 views 13612 17940 Registros encontrados: 8
+DEBUG 2026-02-13 18:51:44,947 views 13612 17940 cliente_info final a enviar al template: None
+DEBUG 2026-02-13 18:51:44,948 views 13612 17940 email_buscado: None
+DEBUG 2026-02-13 18:51:44,948 views 13612 17940 FIN - Vista registro_entrada
+DEBUG 2026-02-13 18:51:44,948 views 13612 17940 ==================================================
+DEBUG 2026-02-13 18:51:50,037 views 13612 17940 ==================================================
+DEBUG 2026-02-13 18:51:50,037 views 13612 17940 INICIO - Vista registro_entrada
+DEBUG 2026-02-13 18:51:50,037 views 13612 17940 Método HTTP: POST
+DEBUG 2026-02-13 18:51:50,037 views 13612 17940 Procesando POST request
+DEBUG 2026-02-13 18:51:50,044 views 13612 17940 Formulario válido
+DEBUG 2026-02-13 18:51:50,044 views 13612 17940 Cliente encontrado: ID=2, Nombre=Rosa Maria Castilla Moreno, Email=rosa@gmail.com
+DEBUG 2026-02-13 18:51:50,045 views 13612 17940 Estado actual del cliente (activo): True
+DEBUG 2026-02-13 18:51:50,045 views 13612 17940 Estado anterior del cliente: True
+DEBUG 2026-02-13 18:51:50,045 models 13612 17940 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:51:50,049 models 13612 17940 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 18:51:50,050 models 13612 17940 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 18:51:50,051 models 13612 17940 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 18:51:50,052 views 13612 17940 Estado después de actualizar: True
+DEBUG 2026-02-13 18:51:50,053 models 13612 17940 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:51:50,059 models 13612 17940 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 18:51:50,060 views 13612 17940 Tiene membresía activa: True
+DEBUG 2026-02-13 18:51:50,062 views 13612 17940 === CLIENTE CON MEMBRESÍA ACTIVA ===
+DEBUG 2026-02-13 18:51:50,063 views 13612 17940 Membresía ID: 2
+DEBUG 2026-02-13 18:51:50,064 views 13612 17940 Tipo: mensual
+DEBUG 2026-02-13 18:51:50,065 views 13612 17940 Inicio: 2026-01-15
+DEBUG 2026-02-13 18:51:50,065 views 13612 17940 Fin: 2026-02-14
+DEBUG 2026-02-13 18:51:50,065 models 13612 17940 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 18:51:50,065 views 13612 17940 Días restantes: 0
+DEBUG 2026-02-13 18:51:50,066 views 13612 17940 Pagado: True
+DEBUG 2026-02-13 18:51:50,066 models 13612 17940 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 18:51:50,076 views 13612 17940 Entrada registrada con ID: 9
+DEBUG 2026-02-13 18:51:50,077 views 13612 17940 cliente_info (activo) creado: {'nombre': 'Rosa Maria Castilla Moreno', 'tipo_membresia': 'Mensual', 'fecha_inicio': datetime.date(2026, 1, 15), 'fecha_fin': datetime.date(2026, 2, 14), 'dias_restantes': 0, 'tiene_membresia_activa': True, 'cliente_id': 2}
+DEBUG 2026-02-13 18:51:50,077 views 13612 17940 Obteniendo últimos 10 registros de entrada
+DEBUG 2026-02-13 18:51:50,080 views 13612 17940 Registros encontrados: 9
+DEBUG 2026-02-13 18:51:50,087 views 13612 17940 cliente_info final a enviar al template: {'nombre': 'Rosa Maria Castilla Moreno', 'tipo_membresia': 'Mensual', 'fecha_inicio': datetime.date(2026, 1, 15), 'fecha_fin': datetime.date(2026, 2, 14), 'dias_restantes': 0, 'tiene_membresia_activa': True, 'cliente_id': 2}
+DEBUG 2026-02-13 18:51:50,088 views 13612 17940 email_buscado: rosa@gmail.com
+DEBUG 2026-02-13 18:51:50,088 views 13612 17940 FIN - Vista registro_entrada
+DEBUG 2026-02-13 18:51:50,088 views 13612 17940 ==================================================
+DEBUG 2026-02-13 18:52:46,491 views 13612 17940 ==================================================
+DEBUG 2026-02-13 18:52:46,492 views 13612 17940 INICIO - Vista registro_entrada
+DEBUG 2026-02-13 18:52:46,492 views 13612 17940 Método HTTP: POST
+DEBUG 2026-02-13 18:52:46,492 views 13612 17940 Procesando POST request
+DEBUG 2026-02-13 18:52:46,502 views 13612 17940 Formulario inválido - Errores: <ul class="errorlist"><li>email<ul class="errorlist"><li>El cliente no tiene una membresía activa y pagada</li></ul></li></ul>
+DEBUG 2026-02-13 18:52:46,507 views 13612 17940 Obteniendo últimos 10 registros de entrada
+DEBUG 2026-02-13 18:52:46,510 views 13612 17940 Registros encontrados: 9
+DEBUG 2026-02-13 18:52:46,528 views 13612 17940 cliente_info final a enviar al template: None
+DEBUG 2026-02-13 18:52:46,528 views 13612 17940 email_buscado: None
+DEBUG 2026-02-13 18:52:46,528 views 13612 17940 FIN - Vista registro_entrada
+DEBUG 2026-02-13 18:52:46,528 views 13612 17940 ==================================================
+DEBUG 2026-02-13 18:53:33,255 views 14892 8148 ==================================================
+DEBUG 2026-02-13 18:53:33,258 views 14892 8148 INICIO - Vista registro_entrada
+DEBUG 2026-02-13 18:53:33,260 views 14892 8148 Método HTTP: POST
+DEBUG 2026-02-13 18:53:33,262 views 14892 8148 Procesando POST request
+DEBUG 2026-02-13 18:53:33,285 views 14892 8148 Formulario inválido - Errores: <ul class="errorlist"><li>email<ul class="errorlist"><li>El cliente no tiene una membresía activa y pagada</li></ul></li></ul>
+DEBUG 2026-02-13 18:53:33,285 views 14892 8148 Obteniendo últimos 10 registros de entrada
+DEBUG 2026-02-13 18:53:33,287 views 14892 8148 Registros encontrados: 9
+DEBUG 2026-02-13 18:53:33,304 views 14892 8148 cliente_info final a enviar al template: None
+DEBUG 2026-02-13 18:53:33,304 views 14892 8148 email_buscado: None
+DEBUG 2026-02-13 18:53:33,304 views 14892 8148 FIN - Vista registro_entrada
+DEBUG 2026-02-13 18:53:33,305 views 14892 8148 ==================================================
+DEBUG 2026-02-13 18:54:11,520 views 14892 8148 ==================================================
+DEBUG 2026-02-13 18:54:11,520 views 14892 8148 INICIO - Vista registro_entrada
+DEBUG 2026-02-13 18:54:11,520 views 14892 8148 Método HTTP: POST
+DEBUG 2026-02-13 18:54:11,520 views 14892 8148 Procesando POST request
+DEBUG 2026-02-13 18:54:11,529 views 14892 8148 Formulario inválido - Errores: <ul class="errorlist"><li>email<ul class="errorlist"><li>El cliente no tiene una membresía activa y pagada</li></ul></li></ul>
+DEBUG 2026-02-13 18:54:11,530 views 14892 8148 Obteniendo últimos 10 registros de entrada
+DEBUG 2026-02-13 18:54:11,533 views 14892 8148 Registros encontrados: 9
+DEBUG 2026-02-13 18:54:11,554 views 14892 8148 cliente_info final a enviar al template: None
+DEBUG 2026-02-13 18:54:11,554 views 14892 8148 email_buscado: None
+DEBUG 2026-02-13 18:54:11,554 views 14892 8148 FIN - Vista registro_entrada
+DEBUG 2026-02-13 18:54:11,554 views 14892 8148 ==================================================
+DEBUG 2026-02-13 18:59:09,945 views 10580 18776 ==================================================
+DEBUG 2026-02-13 18:59:09,946 views 10580 18776 INICIO - Vista registro_entrada
+DEBUG 2026-02-13 18:59:09,947 views 10580 18776 Método HTTP: POST
+DEBUG 2026-02-13 18:59:09,947 views 10580 18776 Procesando POST request
+DEBUG 2026-02-13 18:59:09,952 views 10580 18776 Formulario válido
+DEBUG 2026-02-13 18:59:09,952 views 10580 18776 Cliente encontrado: ID=3, Nombre=Marco Fernandez, Email=edy@gmail.com
+DEBUG 2026-02-13 18:59:09,952 views 10580 18776 Estado actual del cliente (activo): False
+DEBUG 2026-02-13 18:59:09,953 views 10580 18776 Estado anterior del cliente: False
+DEBUG 2026-02-13 18:59:09,953 models 10580 18776 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:59:09,956 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 18:59:09,960 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 18:59:09,966 models 10580 18776   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 18:59:09,966 models 10580 18776 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 18:59:09,968 models 10580 18776 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 18:59:09,970 views 10580 18776 Estado después de actualizar: False
+DEBUG 2026-02-13 18:59:09,972 models 10580 18776 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:59:09,975 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 18:59:09,978 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 18:59:09,986 models 10580 18776   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 18:59:09,987 views 10580 18776 Tiene membresía activa: False
+DEBUG 2026-02-13 18:59:09,987 views 10580 18776 === CLIENTE SIN MEMBRESÍA ACTIVA ===
+DEBUG 2026-02-13 18:59:09,989 views 10580 18776 Buscando última membresía...
+DEBUG 2026-02-13 18:59:09,989 views 10580 18776 Última membresía encontrada - ID: 3
+DEBUG 2026-02-13 18:59:09,989 views 10580 18776 Tipo: mensual
+DEBUG 2026-02-13 18:59:09,989 views 10580 18776 Fecha fin: 2026-01-31
+DEBUG 2026-02-13 18:59:09,990 views 10580 18776 Pagado: True
+DEBUG 2026-02-13 18:59:09,990 views 10580 18776 ¿Vencida?: True
+DEBUG 2026-02-13 18:59:09,990 views 10580 18776 Motivo: membresía vencida hace 14 días
+DEBUG 2026-02-13 18:59:09,992 views 10580 18776 cliente_info (inactivo) creado: {'nombre': 'Marco Fernandez', 'tiene_membresia_activa': False, 'cliente_id': 3, 'email': 'edy@gmail.com', 'telefono': '7725633241', 'ultima_membresia': <Membresia: Marco Fernandez - mensual (2026-01-01 a 2026-01-31)>, 'tipo_membresia': 'Mensual', 'fecha_fin': datetime.date(2026, 1, 31), 'motivo': 'membresía vencida', 'dias_vencida': 14}
+DEBUG 2026-02-13 18:59:09,992 views 10580 18776 Obteniendo últimos 10 registros de entrada
+DEBUG 2026-02-13 18:59:09,999 views 10580 18776 Registros encontrados: 9
+DEBUG 2026-02-13 18:59:10,011 views 10580 18776 cliente_info final a enviar al template: {'nombre': 'Marco Fernandez', 'tiene_membresia_activa': False, 'cliente_id': 3, 'email': 'edy@gmail.com', 'telefono': '7725633241', 'ultima_membresia': <Membresia: Marco Fernandez - mensual (2026-01-01 a 2026-01-31)>, 'tipo_membresia': 'Mensual', 'fecha_fin': datetime.date(2026, 1, 31), 'motivo': 'membresía vencida', 'dias_vencida': 14}
+DEBUG 2026-02-13 18:59:10,011 views 10580 18776 email_buscado: edy@gmail.com
+DEBUG 2026-02-13 18:59:10,013 views 10580 18776 FIN - Vista registro_entrada
+DEBUG 2026-02-13 18:59:10,016 views 10580 18776 ==================================================
+DEBUG 2026-02-13 18:59:20,664 views 10580 18776 ==================================================
+DEBUG 2026-02-13 18:59:20,664 views 10580 18776 INICIO - Vista registro_entrada
+DEBUG 2026-02-13 18:59:20,664 views 10580 18776 Método HTTP: POST
+DEBUG 2026-02-13 18:59:20,666 views 10580 18776 Procesando POST request
+DEBUG 2026-02-13 18:59:20,669 views 10580 18776 Formulario válido
+DEBUG 2026-02-13 18:59:20,669 views 10580 18776 Cliente encontrado: ID=3, Nombre=Marco Fernandez, Email=edy@gmail.com
+DEBUG 2026-02-13 18:59:20,670 views 10580 18776 Estado actual del cliente (activo): False
+DEBUG 2026-02-13 18:59:20,670 views 10580 18776 Estado anterior del cliente: False
+DEBUG 2026-02-13 18:59:20,670 models 10580 18776 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:59:20,672 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 18:59:20,674 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 18:59:20,677 models 10580 18776   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 18:59:20,679 models 10580 18776 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 18:59:20,681 models 10580 18776 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 18:59:20,683 views 10580 18776 Estado después de actualizar: False
+DEBUG 2026-02-13 18:59:20,684 models 10580 18776 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:59:20,690 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 18:59:20,692 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 18:59:20,695 models 10580 18776   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 18:59:20,696 views 10580 18776 Tiene membresía activa: False
+DEBUG 2026-02-13 18:59:20,697 views 10580 18776 === CLIENTE SIN MEMBRESÍA ACTIVA ===
+DEBUG 2026-02-13 18:59:20,705 views 10580 18776 Buscando última membresía...
+DEBUG 2026-02-13 18:59:20,705 views 10580 18776 Última membresía encontrada - ID: 3
+DEBUG 2026-02-13 18:59:20,706 views 10580 18776 Tipo: mensual
+DEBUG 2026-02-13 18:59:20,706 views 10580 18776 Fecha fin: 2026-01-31
+DEBUG 2026-02-13 18:59:20,707 views 10580 18776 Pagado: True
+DEBUG 2026-02-13 18:59:20,707 views 10580 18776 ¿Vencida?: True
+DEBUG 2026-02-13 18:59:20,707 views 10580 18776 Motivo: membresía vencida hace 14 días
+DEBUG 2026-02-13 18:59:20,708 views 10580 18776 cliente_info (inactivo) creado: {'nombre': 'Marco Fernandez', 'tiene_membresia_activa': False, 'cliente_id': 3, 'email': 'edy@gmail.com', 'telefono': '7725633241', 'ultima_membresia': <Membresia: Marco Fernandez - mensual (2026-01-01 a 2026-01-31)>, 'tipo_membresia': 'Mensual', 'fecha_fin': datetime.date(2026, 1, 31), 'motivo': 'membresía vencida', 'dias_vencida': 14}
+DEBUG 2026-02-13 18:59:20,709 views 10580 18776 Obteniendo últimos 10 registros de entrada
+DEBUG 2026-02-13 18:59:20,711 views 10580 18776 Registros encontrados: 9
+DEBUG 2026-02-13 18:59:20,727 views 10580 18776 cliente_info final a enviar al template: {'nombre': 'Marco Fernandez', 'tiene_membresia_activa': False, 'cliente_id': 3, 'email': 'edy@gmail.com', 'telefono': '7725633241', 'ultima_membresia': <Membresia: Marco Fernandez - mensual (2026-01-01 a 2026-01-31)>, 'tipo_membresia': 'Mensual', 'fecha_fin': datetime.date(2026, 1, 31), 'motivo': 'membresía vencida', 'dias_vencida': 14}
+DEBUG 2026-02-13 18:59:20,727 views 10580 18776 email_buscado: edy@gmail.com
+DEBUG 2026-02-13 18:59:20,728 views 10580 18776 FIN - Vista registro_entrada
+DEBUG 2026-02-13 18:59:20,728 views 10580 18776 ==================================================
+DEBUG 2026-02-13 18:59:55,160 models 10580 18776 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:59:55,163 models 10580 18776 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 18:59:55,163 models 10580 18776 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 18:59:55,164 models 10580 18776 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 18:59:55,164 models 10580 18776 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:59:55,168 models 10580 18776 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 18:59:55,170 models 10580 18776 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 18:59:55,172 models 10580 18776 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 18:59:55,173 models 10580 18776 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:59:55,175 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 18:59:55,177 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 18:59:55,178 models 10580 18776   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 18:59:55,178 models 10580 18776 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 18:59:55,179 models 10580 18776 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 18:59:55,179 models 10580 18776 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:59:55,183 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 18:59:55,186 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 18:59:55,188 models 10580 18776   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 18:59:55,188 models 10580 18776 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 18:59:55,188 models 10580 18776 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 18:59:55,189 models 10580 18776 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:59:55,193 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 18:59:55,195 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 18:59:55,196 models 10580 18776   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 18:59:55,197 models 10580 18776 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:59:55,203 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 18:59:55,205 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 18:59:55,206 models 10580 18776   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 18:59:55,207 models 10580 18776 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:59:55,208 models 10580 18776 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 18:59:55,208 models 10580 18776 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 18:59:55,209 models 10580 18776 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 18:59:55,210 models 10580 18776 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 18:59:55,211 models 10580 18776 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 19:00:04,037 views 10580 18776 ==================================================
+DEBUG 2026-02-13 19:00:04,037 views 10580 18776 INICIO - Vista registro_entrada
+DEBUG 2026-02-13 19:00:04,037 views 10580 18776 Método HTTP: GET
+DEBUG 2026-02-13 19:00:04,037 views 10580 18776 GET request - Mostrando formulario vacío
+DEBUG 2026-02-13 19:00:04,038 views 10580 18776 Obteniendo últimos 10 registros de entrada
+DEBUG 2026-02-13 19:00:04,040 views 10580 18776 Registros encontrados: 9
+DEBUG 2026-02-13 19:00:04,059 views 10580 18776 cliente_info final a enviar al template: None
+DEBUG 2026-02-13 19:00:04,059 views 10580 18776 email_buscado: None
+DEBUG 2026-02-13 19:00:04,059 views 10580 18776 FIN - Vista registro_entrada
+DEBUG 2026-02-13 19:00:04,060 views 10580 18776 ==================================================
+DEBUG 2026-02-13 19:00:18,824 models 10580 18776 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:00:18,826 models 10580 18776 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 19:00:18,826 models 10580 18776 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 19:00:18,827 models 10580 18776 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 19:00:44,960 models 10580 18776 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:00:44,963 models 10580 18776 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 19:00:44,964 models 10580 18776 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 19:00:44,964 models 10580 18776 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 19:00:44,965 models 10580 18776 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:00:44,967 models 10580 18776 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 19:00:44,968 models 10580 18776 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 19:00:44,968 models 10580 18776 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 19:00:44,969 models 10580 18776 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:00:44,971 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 19:00:44,973 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:00:44,975 models 10580 18776   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:00:44,975 models 10580 18776 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 19:00:44,975 models 10580 18776 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 19:00:44,976 models 10580 18776 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:00:44,978 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 19:00:44,980 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:00:44,981 models 10580 18776   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:00:44,982 models 10580 18776 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 19:00:44,982 models 10580 18776 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 19:00:44,983 models 10580 18776 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:00:44,986 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 19:00:44,988 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:00:44,989 models 10580 18776   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:00:44,991 models 10580 18776 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:00:44,992 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 19:00:44,994 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:00:44,997 models 10580 18776   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:00:44,999 models 10580 18776 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:00:45,001 models 10580 18776 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 19:00:45,001 models 10580 18776 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 19:00:45,001 models 10580 18776 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:00:45,003 models 10580 18776 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 19:00:45,003 models 10580 18776 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 19:00:48,499 models 10580 18776 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:00:48,502 models 10580 18776 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 19:00:48,502 models 10580 18776 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 19:00:48,503 models 10580 18776 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 19:00:48,503 models 10580 18776 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:00:48,505 models 10580 18776 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 19:00:48,506 models 10580 18776 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 19:00:48,506 models 10580 18776 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 19:00:48,506 models 10580 18776 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:00:48,516 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 19:00:48,518 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:00:48,520 models 10580 18776   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:00:48,520 models 10580 18776 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 19:00:48,521 models 10580 18776 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 19:00:48,522 models 10580 18776 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:00:48,526 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 19:00:48,527 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:00:48,527 models 10580 18776   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:00:48,528 models 10580 18776 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 19:00:48,528 models 10580 18776 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 19:00:48,533 models 10580 18776 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:00:48,535 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 19:00:48,536 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:00:48,536 models 10580 18776   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:00:48,539 models 10580 18776 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:00:48,543 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 19:00:48,544 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:00:48,545 models 10580 18776   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:00:48,546 models 10580 18776 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:00:48,548 models 10580 18776 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 19:00:48,548 models 10580 18776 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 19:00:48,548 models 10580 18776 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:00:48,549 models 10580 18776 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 19:00:48,550 models 10580 18776 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 19:00:49,460 views 10580 18776 ==================================================
+DEBUG 2026-02-13 19:00:49,460 views 10580 18776 INICIO - Vista registro_entrada
+DEBUG 2026-02-13 19:00:49,460 views 10580 18776 Método HTTP: GET
+DEBUG 2026-02-13 19:00:49,461 views 10580 18776 GET request - Mostrando formulario vacío
+DEBUG 2026-02-13 19:00:49,461 views 10580 18776 Obteniendo últimos 10 registros de entrada
+DEBUG 2026-02-13 19:00:49,463 views 10580 18776 Registros encontrados: 9
+DEBUG 2026-02-13 19:00:49,478 views 10580 18776 cliente_info final a enviar al template: None
+DEBUG 2026-02-13 19:00:49,479 views 10580 18776 email_buscado: None
+DEBUG 2026-02-13 19:00:49,479 views 10580 18776 FIN - Vista registro_entrada
+DEBUG 2026-02-13 19:00:49,479 views 10580 18776 ==================================================
+DEBUG 2026-02-13 19:05:18,093 models 10580 18776 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:05:18,095 models 10580 18776 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 19:05:18,095 models 10580 18776 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 19:05:18,096 models 10580 18776 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 19:05:18,096 models 10580 18776 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:05:18,097 models 10580 18776 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 19:05:18,098 models 10580 18776 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 19:05:18,099 models 10580 18776 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 19:05:18,100 models 10580 18776 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:05:18,107 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 19:05:18,109 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:05:18,110 models 10580 18776   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:05:18,110 models 10580 18776 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 19:05:18,110 models 10580 18776 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 19:05:18,111 models 10580 18776 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:05:18,113 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 19:05:18,115 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:05:18,116 models 10580 18776   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:05:18,117 models 10580 18776 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 19:05:18,117 models 10580 18776 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 19:05:18,119 models 10580 18776 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:05:18,121 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 19:05:18,122 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:05:18,123 models 10580 18776   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:05:18,126 models 10580 18776 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:05:18,128 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 19:05:18,129 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:05:18,130 models 10580 18776   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:05:18,131 models 10580 18776 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:05:18,133 models 10580 18776 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 19:05:18,134 models 10580 18776 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 19:05:18,134 models 10580 18776 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:05:18,138 models 10580 18776 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 19:05:18,140 models 10580 18776 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 19:06:48,027 views 10580 18776 ==================================================
+DEBUG 2026-02-13 19:06:48,028 views 10580 18776 INICIO - Vista registro_entrada
+DEBUG 2026-02-13 19:06:48,028 views 10580 18776 Método HTTP: GET
+DEBUG 2026-02-13 19:06:48,028 views 10580 18776 GET request - Mostrando formulario vacío
+DEBUG 2026-02-13 19:06:48,029 views 10580 18776 Obteniendo últimos 10 registros de entrada
+DEBUG 2026-02-13 19:06:48,031 views 10580 18776 Registros encontrados: 9
+DEBUG 2026-02-13 19:06:48,053 views 10580 18776 cliente_info final a enviar al template: None
+DEBUG 2026-02-13 19:06:48,053 views 10580 18776 email_buscado: None
+DEBUG 2026-02-13 19:06:48,054 views 10580 18776 FIN - Vista registro_entrada
+DEBUG 2026-02-13 19:06:48,055 views 10580 18776 ==================================================
+DEBUG 2026-02-13 19:06:50,939 views 10580 18776 ==================================================
+DEBUG 2026-02-13 19:06:50,939 views 10580 18776 INICIO - Vista registro_entrada
+DEBUG 2026-02-13 19:06:50,939 views 10580 18776 Método HTTP: POST
+DEBUG 2026-02-13 19:06:50,939 views 10580 18776 Procesando POST request
+DEBUG 2026-02-13 19:06:50,942 views 10580 18776 Formulario válido
+DEBUG 2026-02-13 19:06:50,943 views 10580 18776 Cliente encontrado: ID=3, Nombre=Marco Fernandez, Email=edy@gmail.com
+DEBUG 2026-02-13 19:06:50,944 views 10580 18776 Estado actual del cliente (activo): False
+DEBUG 2026-02-13 19:06:50,945 views 10580 18776 Estado anterior del cliente: False
+DEBUG 2026-02-13 19:06:50,949 models 10580 18776 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:06:50,953 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 19:06:50,956 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:06:50,958 models 10580 18776   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:06:50,958 models 10580 18776 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 19:06:50,958 models 10580 18776 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 19:06:50,959 views 10580 18776 Estado después de actualizar: False
+DEBUG 2026-02-13 19:06:50,965 models 10580 18776 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:06:50,968 models 10580 18776 No se encontró membresía activa
+DEBUG 2026-02-13 19:06:50,969 models 10580 18776 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:06:50,970 models 10580 18776   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:06:50,971 views 10580 18776 Tiene membresía activa: False
+DEBUG 2026-02-13 19:06:50,972 views 10580 18776 === CLIENTE SIN MEMBRESÍA ACTIVA ===
+DEBUG 2026-02-13 19:06:50,973 views 10580 18776 Buscando última membresía...
+DEBUG 2026-02-13 19:06:50,973 views 10580 18776 Última membresía encontrada - ID: 3
+DEBUG 2026-02-13 19:06:50,974 views 10580 18776 Tipo: mensual
+DEBUG 2026-02-13 19:06:50,974 views 10580 18776 Fecha fin: 2026-01-31
+DEBUG 2026-02-13 19:06:50,974 views 10580 18776 Pagado: True
+DEBUG 2026-02-13 19:06:50,974 views 10580 18776 ¿Vencida?: True
+DEBUG 2026-02-13 19:06:50,974 views 10580 18776 Motivo: membresía vencida hace 14 días
+DEBUG 2026-02-13 19:06:50,984 views 10580 18776 cliente_info (inactivo) creado: {'nombre': 'Marco Fernandez', 'tiene_membresia_activa': False, 'cliente_id': 3, 'email': 'edy@gmail.com', 'telefono': '7725633241', 'ultima_membresia': <Membresia: Marco Fernandez - mensual (2026-01-01 a 2026-01-31)>, 'tipo_membresia': 'Mensual', 'fecha_fin': datetime.date(2026, 1, 31), 'motivo': 'membresía vencida', 'dias_vencida': 14}
+DEBUG 2026-02-13 19:06:50,986 views 10580 18776 Obteniendo últimos 10 registros de entrada
+DEBUG 2026-02-13 19:06:50,988 views 10580 18776 Registros encontrados: 9
+DEBUG 2026-02-13 19:06:51,003 views 10580 18776 cliente_info final a enviar al template: {'nombre': 'Marco Fernandez', 'tiene_membresia_activa': False, 'cliente_id': 3, 'email': 'edy@gmail.com', 'telefono': '7725633241', 'ultima_membresia': <Membresia: Marco Fernandez - mensual (2026-01-01 a 2026-01-31)>, 'tipo_membresia': 'Mensual', 'fecha_fin': datetime.date(2026, 1, 31), 'motivo': 'membresía vencida', 'dias_vencida': 14}
+DEBUG 2026-02-13 19:06:51,003 views 10580 18776 email_buscado: edy@gmail.com
+DEBUG 2026-02-13 19:06:51,004 views 10580 18776 FIN - Vista registro_entrada
+DEBUG 2026-02-13 19:06:51,004 views 10580 18776 ==================================================
+DEBUG 2026-02-13 19:22:31,792 models 21364 17432 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:22:31,795 models 21364 17432 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 19:22:31,795 models 21364 17432 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 19:22:31,795 models 21364 17432 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 19:22:31,796 models 21364 17432 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:22:31,797 models 21364 17432 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 19:22:31,798 models 21364 17432 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 19:22:31,799 models 21364 17432 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 19:22:31,802 models 21364 17432 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:22:31,808 models 21364 17432 No se encontró membresía activa
+DEBUG 2026-02-13 19:22:31,811 models 21364 17432 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:22:31,814 models 21364 17432   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:22:31,814 models 21364 17432 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 19:22:31,815 models 21364 17432 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 19:22:31,816 models 21364 17432 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:22:31,818 models 21364 17432 No se encontró membresía activa
+DEBUG 2026-02-13 19:22:31,819 models 21364 17432 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:22:31,821 models 21364 17432   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:22:31,821 models 21364 17432 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 19:22:31,822 models 21364 17432 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 19:22:31,823 models 21364 17432 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:22:31,826 models 21364 17432 No se encontró membresía activa
+DEBUG 2026-02-13 19:22:31,830 models 21364 17432 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:22:31,831 models 21364 17432   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:22:31,833 models 21364 17432 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:22:31,835 models 21364 17432 No se encontró membresía activa
+DEBUG 2026-02-13 19:22:31,839 models 21364 17432 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:22:31,842 models 21364 17432   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:22:31,845 models 21364 17432 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:22:31,848 models 21364 17432 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 19:22:31,850 models 21364 17432 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 19:22:31,851 models 21364 17432 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:22:31,852 models 21364 17432 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 19:22:31,853 models 21364 17432 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 19:56:56,589 models 21364 16532 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:56:56,591 models 21364 16532 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 19:56:56,591 models 21364 16532 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 19:56:56,592 models 21364 16532 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 19:56:56,595 models 21364 16532 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:56:56,599 models 21364 16532 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 19:56:56,603 models 21364 16532 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 19:56:56,604 models 21364 16532 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 19:56:56,605 models 21364 16532 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:56:56,608 models 21364 16532 No se encontró membresía activa
+DEBUG 2026-02-13 19:56:56,612 models 21364 16532 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:56:56,613 models 21364 16532   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:56:56,613 models 21364 16532 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 19:56:56,614 models 21364 16532 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 19:56:56,614 models 21364 16532 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:56:56,615 models 21364 16532 No se encontró membresía activa
+DEBUG 2026-02-13 19:56:56,617 models 21364 16532 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:56:56,620 models 21364 16532   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:56:56,620 models 21364 16532 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 19:56:56,621 models 21364 16532 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 19:56:56,624 models 21364 16532 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:56:56,625 models 21364 16532 No se encontró membresía activa
+DEBUG 2026-02-13 19:56:56,627 models 21364 16532 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:56:56,627 models 21364 16532   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:56:56,629 models 21364 16532 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:56:56,630 models 21364 16532 No se encontró membresía activa
+DEBUG 2026-02-13 19:56:56,631 models 21364 16532 Total membresías del cliente: 1
+DEBUG 2026-02-13 19:56:56,633 models 21364 16532   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 19:56:56,637 models 21364 16532 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:56:56,640 models 21364 16532 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 19:56:56,641 models 21364 16532 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 19:56:56,641 models 21364 16532 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 19:56:56,642 models 21364 16532 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 19:56:56,643 models 21364 16532 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 20:00:29,055 models 21364 16532 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:29,059 models 21364 16532 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:00:29,061 models 21364 16532 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:00:29,062 models 21364 16532 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 20:00:29,062 models 21364 16532 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:29,065 models 21364 16532 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:00:29,065 models 21364 16532 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:00:29,066 models 21364 16532 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 20:00:29,066 models 21364 16532 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:29,068 models 21364 16532 No se encontró membresía activa
+DEBUG 2026-02-13 20:00:29,070 models 21364 16532 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:00:29,070 models 21364 16532   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:00:29,071 models 21364 16532 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:00:29,071 models 21364 16532 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 20:00:29,071 models 21364 16532 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:29,073 models 21364 16532 No se encontró membresía activa
+DEBUG 2026-02-13 20:00:29,074 models 21364 16532 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:00:29,078 models 21364 16532   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:00:29,078 models 21364 16532 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:00:29,079 models 21364 16532 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 20:00:29,080 models 21364 16532 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:29,082 models 21364 16532 No se encontró membresía activa
+DEBUG 2026-02-13 20:00:29,084 models 21364 16532 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:00:29,086 models 21364 16532   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:00:29,087 models 21364 16532 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:29,088 models 21364 16532 No se encontró membresía activa
+DEBUG 2026-02-13 20:00:29,089 models 21364 16532 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:00:29,090 models 21364 16532   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:00:29,093 models 21364 16532 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:29,097 models 21364 16532 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:00:29,097 models 21364 16532 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 20:00:29,097 models 21364 16532 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:29,099 models 21364 16532 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:00:29,099 models 21364 16532 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 20:00:30,813 models 21364 16532 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:30,815 models 21364 16532 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:00:30,815 models 21364 16532 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:00:30,816 models 21364 16532 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 20:00:30,816 models 21364 16532 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:30,818 models 21364 16532 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:00:30,818 models 21364 16532 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:00:30,818 models 21364 16532 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 20:00:30,819 models 21364 16532 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:30,822 models 21364 16532 No se encontró membresía activa
+DEBUG 2026-02-13 20:00:30,826 models 21364 16532 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:00:30,827 models 21364 16532   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:00:30,828 models 21364 16532 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:00:30,828 models 21364 16532 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 20:00:30,829 models 21364 16532 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:30,830 models 21364 16532 No se encontró membresía activa
+DEBUG 2026-02-13 20:00:30,834 models 21364 16532 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:00:30,836 models 21364 16532   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:00:30,836 models 21364 16532 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:00:30,836 models 21364 16532 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 20:00:30,837 models 21364 16532 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:30,838 models 21364 16532 No se encontró membresía activa
+DEBUG 2026-02-13 20:00:30,840 models 21364 16532 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:00:30,841 models 21364 16532   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:00:30,845 models 21364 16532 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:30,848 models 21364 16532 No se encontró membresía activa
+DEBUG 2026-02-13 20:00:30,850 models 21364 16532 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:00:30,850 models 21364 16532   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:00:30,852 models 21364 16532 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:30,853 models 21364 16532 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:00:30,853 models 21364 16532 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 20:00:30,854 models 21364 16532 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:30,855 models 21364 16532 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:00:30,856 models 21364 16532 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 20:00:45,885 models 21364 16532 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:45,887 models 21364 16532 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:00:45,887 models 21364 16532 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:00:45,888 models 21364 16532 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 20:00:45,888 models 21364 16532 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:45,890 models 21364 16532 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:00:45,891 models 21364 16532 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:00:45,892 models 21364 16532 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 20:00:45,893 models 21364 16532 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:45,895 models 21364 16532 No se encontró membresía activa
+DEBUG 2026-02-13 20:00:45,899 models 21364 16532 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:00:45,900 models 21364 16532   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:00:45,900 models 21364 16532 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:00:45,900 models 21364 16532 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 20:00:45,900 models 21364 16532 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:45,902 models 21364 16532 No se encontró membresía activa
+DEBUG 2026-02-13 20:00:45,903 models 21364 16532 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:00:45,906 models 21364 16532   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:00:45,907 models 21364 16532 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:00:45,907 models 21364 16532 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 20:00:45,909 models 21364 16532 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:45,910 models 21364 16532 No se encontró membresía activa
+DEBUG 2026-02-13 20:00:45,912 models 21364 16532 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:00:45,913 models 21364 16532   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:00:45,915 models 21364 16532 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:45,917 models 21364 16532 No se encontró membresía activa
+DEBUG 2026-02-13 20:00:45,919 models 21364 16532 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:00:45,922 models 21364 16532   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:00:45,923 models 21364 16532 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:45,925 models 21364 16532 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:00:45,925 models 21364 16532 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 20:00:45,925 models 21364 16532 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:00:45,927 models 21364 16532 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:00:45,927 models 21364 16532 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 20:08:54,440 models 21364 8416 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:08:54,442 models 21364 8416 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:08:54,442 models 21364 8416 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:08:54,443 models 21364 8416 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 20:08:54,443 models 21364 8416 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:08:54,446 models 21364 8416 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:08:54,446 models 21364 8416 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:08:54,447 models 21364 8416 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 20:08:54,448 models 21364 8416 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:08:54,455 models 21364 8416 No se encontró membresía activa
+DEBUG 2026-02-13 20:08:54,457 models 21364 8416 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:08:54,458 models 21364 8416   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:08:54,458 models 21364 8416 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:08:54,458 models 21364 8416 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 20:08:54,460 models 21364 8416 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:08:54,463 models 21364 8416 No se encontró membresía activa
+DEBUG 2026-02-13 20:08:54,465 models 21364 8416 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:08:54,466 models 21364 8416   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:08:54,466 models 21364 8416 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:08:54,467 models 21364 8416 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 20:08:54,468 models 21364 8416 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:08:54,472 models 21364 8416 No se encontró membresía activa
+DEBUG 2026-02-13 20:08:54,475 models 21364 8416 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:08:54,476 models 21364 8416   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:08:54,478 models 21364 8416 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:08:54,479 models 21364 8416 No se encontró membresía activa
+DEBUG 2026-02-13 20:08:54,481 models 21364 8416 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:08:54,482 models 21364 8416   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:08:54,483 models 21364 8416 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:08:54,484 models 21364 8416 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:08:54,485 models 21364 8416 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 20:08:54,486 models 21364 8416 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:08:54,493 models 21364 8416 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:08:54,493 models 21364 8416 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 20:09:07,462 models 21364 8416 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:09:07,465 models 21364 8416 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:09:07,465 models 21364 8416 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:09:07,465 models 21364 8416 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 20:09:10,365 models 21364 8416 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:09:10,367 models 21364 8416 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:09:10,368 models 21364 8416 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:09:10,369 models 21364 8416 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 20:09:10,369 models 21364 8416 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:09:10,372 models 21364 8416 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:09:10,375 models 21364 8416 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:09:10,376 models 21364 8416 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 20:09:10,376 models 21364 8416 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:09:10,379 models 21364 8416 No se encontró membresía activa
+DEBUG 2026-02-13 20:09:10,381 models 21364 8416 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:09:10,382 models 21364 8416   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:09:10,386 models 21364 8416 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:09:10,386 models 21364 8416 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 20:09:10,386 models 21364 8416 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:09:10,388 models 21364 8416 No se encontró membresía activa
+DEBUG 2026-02-13 20:09:10,389 models 21364 8416 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:09:10,391 models 21364 8416   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:09:10,392 models 21364 8416 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:09:10,392 models 21364 8416 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 20:09:10,394 models 21364 8416 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:09:10,396 models 21364 8416 No se encontró membresía activa
+DEBUG 2026-02-13 20:09:10,397 models 21364 8416 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:09:10,398 models 21364 8416   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:09:10,401 models 21364 8416 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:09:10,405 models 21364 8416 No se encontró membresía activa
+DEBUG 2026-02-13 20:09:10,407 models 21364 8416 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:09:10,408 models 21364 8416   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:09:10,409 models 21364 8416 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:09:10,411 models 21364 8416 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:09:10,411 models 21364 8416 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 20:09:10,411 models 21364 8416 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:09:10,413 models 21364 8416 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:09:10,413 models 21364 8416 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 20:38:13,889 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:38:13,891 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:38:13,892 models 21364 6904 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:38:13,892 models 21364 6904 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 20:38:13,892 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:38:13,899 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:38:13,903 models 21364 6904 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:38:13,904 models 21364 6904 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 20:38:13,906 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:38:13,907 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:38:13,909 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:38:13,910 models 21364 6904   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:38:13,910 models 21364 6904 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:38:13,911 models 21364 6904 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 20:38:13,912 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:38:13,914 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:38:13,916 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:38:13,917 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:38:13,919 models 21364 6904 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:38:13,919 models 21364 6904 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 20:38:13,922 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:38:13,924 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:38:13,925 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:38:13,926 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:38:13,931 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:38:13,933 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:38:13,935 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:38:13,936 models 21364 6904   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:38:13,937 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:38:13,939 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:38:13,939 models 21364 6904 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 20:38:13,939 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:38:13,941 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:38:13,941 models 21364 6904 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 20:41:14,869 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:41:14,871 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:41:14,871 models 21364 6904 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:41:14,872 models 21364 6904 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 20:41:17,025 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:41:17,027 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:41:17,028 models 21364 6904 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:41:17,028 models 21364 6904 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 20:41:17,028 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:41:17,034 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:41:17,035 models 21364 6904 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:41:17,036 models 21364 6904 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 20:41:17,037 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:41:17,040 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:41:17,042 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:41:17,044 models 21364 6904   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:41:17,044 models 21364 6904 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:41:17,044 models 21364 6904 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 20:41:17,044 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:41:17,049 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:41:17,051 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:41:17,052 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:41:17,052 models 21364 6904 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:41:17,052 models 21364 6904 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 20:41:17,056 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:41:17,058 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:41:17,059 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:41:17,060 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:41:17,061 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:41:17,065 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:41:17,068 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:41:17,069 models 21364 6904   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:41:17,071 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:41:17,072 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:41:17,073 models 21364 6904 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 20:41:17,073 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:41:17,075 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:41:17,075 models 21364 6904 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 20:41:47,231 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:41:47,236 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:41:47,237 models 21364 6904 Total membresías del cliente: 2
+DEBUG 2026-02-13 20:41:47,238 models 21364 6904   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:41:47,238 models 21364 6904   - Membresía ID=5: 2026-02-13 a 2026-03-15, pagado=False, activa hoy=False
+DEBUG 2026-02-13 20:41:47,239 models 21364 6904 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:41:47,239 models 21364 6904 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 20:41:47,255 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:41:47,264 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:41:47,266 models 21364 6904 Total membresías del cliente: 2
+DEBUG 2026-02-13 20:41:47,268 models 21364 6904   - Membresía ID=3: 2026-01-01 a 2026-01-31, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:41:47,269 models 21364 6904   - Membresía ID=5: 2026-02-13 a 2026-03-15, pagado=False, activa hoy=False
+DEBUG 2026-02-13 20:41:47,269 models 21364 6904 Cliente 3 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:41:47,270 models 21364 6904 Cliente 3 - Estado sin cambios: False
+DEBUG 2026-02-13 20:42:12,031 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:12,034 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:42:12,034 models 21364 6904 Cliente 3 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:42:12,035 models 21364 6904 Cliente 3 - Estado cambiado: False -> True
+DEBUG 2026-02-13 20:42:12,052 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:12,055 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:42:12,055 models 21364 6904 Cliente 3 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:42:12,055 models 21364 6904 Cliente 3 - Estado sin cambios: True
+DEBUG 2026-02-13 20:42:18,370 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:18,374 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:42:18,378 models 21364 6904 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:42:18,384 models 21364 6904 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 20:42:18,384 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:18,387 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:42:18,388 models 21364 6904 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:42:18,388 models 21364 6904 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 20:42:18,389 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:18,394 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:42:18,395 models 21364 6904 Cliente 3 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:42:18,396 models 21364 6904 Cliente 3 - Estado sin cambios: True
+DEBUG 2026-02-13 20:42:18,398 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:18,401 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:42:18,404 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:42:18,405 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:42:18,405 models 21364 6904 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:42:18,405 models 21364 6904 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 20:42:18,409 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:18,414 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:42:18,415 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:42:18,415 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:42:18,417 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:18,418 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:42:18,418 models 21364 6904 Membresía 5 - Días restantes: 29
+DEBUG 2026-02-13 20:42:18,419 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:18,420 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:42:18,421 models 21364 6904 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 20:42:18,421 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:18,423 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:42:18,426 models 21364 6904 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 20:42:40,116 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:40,118 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:42:40,118 models 21364 6904 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:42:40,118 models 21364 6904 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 20:42:40,118 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:40,120 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:42:40,121 models 21364 6904 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:42:40,122 models 21364 6904 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 20:42:40,123 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:40,131 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:42:40,131 models 21364 6904 Cliente 3 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:42:40,133 models 21364 6904 Cliente 3 - Estado sin cambios: True
+DEBUG 2026-02-13 20:42:40,133 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:40,137 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:42:40,142 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:42:40,146 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:42:40,148 models 21364 6904 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:42:40,148 models 21364 6904 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 20:42:40,150 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:40,151 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:42:40,152 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:42:40,153 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:42:40,155 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:40,156 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:42:40,157 models 21364 6904 Membresía 5 - Días restantes: 29
+DEBUG 2026-02-13 20:42:40,157 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:40,158 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:42:40,159 models 21364 6904 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 20:42:40,159 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:40,164 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:42:40,164 models 21364 6904 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 20:42:53,594 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:42:53,595 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:42:53,596 models 21364 6904 Cliente 3 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:42:53,596 models 21364 6904 Cliente 3 - Estado sin cambios: True
+DEBUG 2026-02-13 20:43:00,124 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:00,126 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:43:00,126 models 21364 6904 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:43:00,126 models 21364 6904 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 20:43:00,127 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:00,128 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:43:00,128 models 21364 6904 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:43:00,129 models 21364 6904 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 20:43:00,131 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:00,140 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:43:00,141 models 21364 6904 Cliente 3 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:43:00,143 models 21364 6904 Cliente 3 - Estado sin cambios: True
+DEBUG 2026-02-13 20:43:00,149 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:00,156 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:43:00,159 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:43:00,160 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:43:00,160 models 21364 6904 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:43:00,160 models 21364 6904 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 20:43:00,161 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:00,162 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:43:00,164 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:43:00,165 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:43:00,166 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:00,172 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:43:00,174 models 21364 6904 Membresía 5 - Días restantes: 29
+DEBUG 2026-02-13 20:43:00,175 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:00,177 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:43:00,177 models 21364 6904 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 20:43:00,177 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:00,179 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:43:00,179 models 21364 6904 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 20:43:26,328 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:26,331 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:43:26,332 models 21364 6904 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:43:26,332 models 21364 6904 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 20:43:26,332 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:26,340 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:43:26,340 models 21364 6904 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:43:26,341 models 21364 6904 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 20:43:26,341 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:26,343 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:43:26,343 models 21364 6904 Cliente 3 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:43:26,344 models 21364 6904 Cliente 3 - Estado sin cambios: True
+DEBUG 2026-02-13 20:43:26,344 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:26,348 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:43:26,350 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:43:26,356 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:43:26,357 models 21364 6904 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:43:26,358 models 21364 6904 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 20:43:26,360 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:26,363 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:43:26,366 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:43:26,368 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:43:26,370 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:26,371 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:43:26,372 models 21364 6904 Membresía 5 - Días restantes: 29
+DEBUG 2026-02-13 20:43:26,372 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:26,375 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:43:26,375 models 21364 6904 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 20:43:26,376 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:26,377 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:43:26,378 models 21364 6904 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 20:43:57,228 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:57,230 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:43:57,230 models 21364 6904 Cliente 3 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:43:57,232 models 21364 6904 Cliente 3 - Estado sin cambios: True
+DEBUG 2026-02-13 20:43:57,233 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:43:57,236 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:43:57,241 models 21364 6904 Membresía 5 - Días restantes: 29
+DEBUG 2026-02-13 20:44:28,718 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:44:28,721 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:44:28,722 models 21364 6904 Cliente 3 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:44:28,722 models 21364 6904 Cliente 3 - Estado sin cambios: True
+DEBUG 2026-02-13 20:44:52,008 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:44:52,009 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:44:52,010 models 21364 6904 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:44:52,010 models 21364 6904 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 20:44:52,010 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:44:52,012 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:44:52,013 models 21364 6904 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:44:52,013 models 21364 6904 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 20:44:52,018 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:44:52,022 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:44:52,022 models 21364 6904 Cliente 3 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:44:52,023 models 21364 6904 Cliente 3 - Estado sin cambios: True
+DEBUG 2026-02-13 20:44:52,024 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:44:52,025 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:44:52,027 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:44:52,028 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:44:52,028 models 21364 6904 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:44:52,029 models 21364 6904 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 20:44:52,038 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:44:52,040 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:44:52,041 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:44:52,041 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:44:52,043 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:44:52,044 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:44:52,044 models 21364 6904 Membresía 5 - Días restantes: 29
+DEBUG 2026-02-13 20:44:52,045 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:44:52,046 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:44:52,047 models 21364 6904 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 20:44:52,047 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:44:52,050 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:44:52,051 models 21364 6904 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 20:45:00,985 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:45:00,987 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:45:00,987 models 21364 6904 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:45:00,987 models 21364 6904 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 20:45:00,987 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:45:00,989 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:45:00,992 models 21364 6904 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:45:00,994 models 21364 6904 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 20:45:00,997 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:45:00,999 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:45:00,999 models 21364 6904 Cliente 3 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:45:00,999 models 21364 6904 Cliente 3 - Estado sin cambios: True
+DEBUG 2026-02-13 20:45:01,000 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:45:01,002 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:45:01,004 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:45:01,005 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:45:01,014 models 21364 6904 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:45:01,014 models 21364 6904 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 20:45:01,015 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:45:01,017 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:45:01,018 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:45:01,019 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:45:01,021 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:45:01,022 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:45:01,022 models 21364 6904 Membresía 5 - Días restantes: 29
+DEBUG 2026-02-13 20:45:01,022 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:45:01,026 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:45:01,026 models 21364 6904 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 20:45:01,027 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:45:01,029 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:45:01,029 models 21364 6904 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-13 20:45:28,617 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:45:28,619 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:45:28,619 models 21364 6904 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:45:28,620 models 21364 6904 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-13 20:45:28,620 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:45:28,624 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:45:28,624 models 21364 6904 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:45:28,624 models 21364 6904 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-13 20:45:28,626 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:45:28,629 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:45:28,629 models 21364 6904 Cliente 3 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-13 20:45:28,629 models 21364 6904 Cliente 3 - Estado sin cambios: True
+DEBUG 2026-02-13 20:45:28,630 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:45:28,634 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:45:28,636 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:45:28,637 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:45:28,637 models 21364 6904 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-13 20:45:28,638 models 21364 6904 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-13 20:45:28,639 models 21364 6904 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:45:28,640 models 21364 6904 No se encontró membresía activa
+DEBUG 2026-02-13 20:45:28,641 models 21364 6904 Total membresías del cliente: 1
+DEBUG 2026-02-13 20:45:28,642 models 21364 6904   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-13 20:45:28,644 models 21364 6904 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:45:28,645 models 21364 6904 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-13 20:45:28,645 models 21364 6904 Membresía 5 - Días restantes: 29
+DEBUG 2026-02-13 20:45:28,645 models 21364 6904 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:45:28,647 models 21364 6904 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-13 20:45:28,648 models 21364 6904 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-13 20:45:28,648 models 21364 6904 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-13 20:45:28,651 models 21364 6904 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-13 20:45:28,652 models 21364 6904 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-14 11:11:06,910 models 21364 14532 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:11:06,914 models 21364 14532 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-14 11:11:06,914 models 21364 14532 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-14 11:11:06,914 models 21364 14532 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-14 11:11:06,914 models 21364 14532 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:11:06,916 models 21364 14532 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-14 11:11:06,916 models 21364 14532 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-14 11:11:06,916 models 21364 14532 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-14 11:11:06,916 models 21364 14532 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:11:06,920 models 21364 14532 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-14 11:11:06,920 models 21364 14532 Cliente 3 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-14 11:11:06,921 models 21364 14532 Cliente 3 - Estado sin cambios: True
+DEBUG 2026-02-14 11:11:06,921 models 21364 14532 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:11:06,928 models 21364 14532 No se encontró membresía activa
+DEBUG 2026-02-14 11:11:06,930 models 21364 14532 Total membresías del cliente: 1
+DEBUG 2026-02-14 11:11:06,943 models 21364 14532   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-14 11:11:06,944 models 21364 14532 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-14 11:11:06,944 models 21364 14532 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-14 11:11:06,946 models 21364 14532 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:11:06,949 models 21364 14532 No se encontró membresía activa
+DEBUG 2026-02-14 11:11:06,951 models 21364 14532 Total membresías del cliente: 1
+DEBUG 2026-02-14 11:11:06,952 models 21364 14532   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-14 11:11:06,954 models 21364 14532 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:11:06,959 models 21364 14532 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-14 11:11:06,960 models 21364 14532 Membresía 5 - Días restantes: 29
+DEBUG 2026-02-14 11:11:06,961 models 21364 14532 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:11:06,965 models 21364 14532 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-14 11:11:06,966 models 21364 14532 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-14 11:11:06,966 models 21364 14532 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:11:06,968 models 21364 14532 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-14 11:11:06,969 models 21364 14532 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-14 11:11:10,242 models 21364 14532 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:11:10,244 models 21364 14532 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-14 11:11:10,245 models 21364 14532 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-14 11:11:10,245 models 21364 14532 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-14 11:11:10,245 models 21364 14532 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:11:10,247 models 21364 14532 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-14 11:11:10,248 models 21364 14532 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-14 11:11:10,249 models 21364 14532 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-14 11:11:10,251 models 21364 14532 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:11:10,261 models 21364 14532 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-14 11:11:10,261 models 21364 14532 Cliente 3 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-14 11:11:10,262 models 21364 14532 Cliente 3 - Estado sin cambios: True
+DEBUG 2026-02-14 11:11:10,262 models 21364 14532 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:11:10,263 models 21364 14532 No se encontró membresía activa
+DEBUG 2026-02-14 11:11:10,264 models 21364 14532 Total membresías del cliente: 1
+DEBUG 2026-02-14 11:11:10,265 models 21364 14532   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-14 11:11:10,268 models 21364 14532 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-14 11:11:10,271 models 21364 14532 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-14 11:11:10,276 models 21364 14532 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:11:10,283 models 21364 14532 No se encontró membresía activa
+DEBUG 2026-02-14 11:11:10,298 models 21364 14532 Total membresías del cliente: 1
+DEBUG 2026-02-14 11:11:10,303 models 21364 14532   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-14 11:11:10,312 models 21364 14532 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:11:10,321 models 21364 14532 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-14 11:11:10,322 models 21364 14532 Membresía 5 - Días restantes: 29
+DEBUG 2026-02-14 11:11:10,326 models 21364 14532 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:11:10,336 models 21364 14532 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-14 11:11:10,341 models 21364 14532 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-14 11:11:10,343 models 21364 14532 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:11:10,352 models 21364 14532 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-14 11:11:10,356 models 21364 14532 Membresía 1 - Días restantes: 18
+DEBUG 2026-02-14 11:12:18,976 models 21364 14532 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:12:18,978 models 21364 14532 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-14 11:12:18,978 models 21364 14532 Cliente 1 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-14 11:12:18,978 models 21364 14532 Cliente 1 - Estado sin cambios: True
+DEBUG 2026-02-14 11:12:18,978 models 21364 14532 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:12:18,981 models 21364 14532 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-14 11:12:18,981 models 21364 14532 Cliente 2 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-14 11:12:18,982 models 21364 14532 Cliente 2 - Estado sin cambios: True
+DEBUG 2026-02-14 11:12:18,986 models 21364 14532 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:12:18,989 models 21364 14532 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-14 11:12:18,990 models 21364 14532 Cliente 3 - ¿Tiene membresía activa?: True
+DEBUG 2026-02-14 11:12:18,990 models 21364 14532 Cliente 3 - Estado sin cambios: True
+DEBUG 2026-02-14 11:12:18,990 models 21364 14532 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:12:18,992 models 21364 14532 No se encontró membresía activa
+DEBUG 2026-02-14 11:12:18,993 models 21364 14532 Total membresías del cliente: 1
+DEBUG 2026-02-14 11:12:18,993 models 21364 14532   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-14 11:12:18,994 models 21364 14532 Cliente 4 - ¿Tiene membresía activa?: False
+DEBUG 2026-02-14 11:12:18,994 models 21364 14532 Cliente 4 - Estado sin cambios: False
+DEBUG 2026-02-14 11:12:18,995 models 21364 14532 Buscando membresía activa para cliente 4 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:12:18,997 models 21364 14532 No se encontró membresía activa
+DEBUG 2026-02-14 11:12:18,998 models 21364 14532 Total membresías del cliente: 1
+DEBUG 2026-02-14 11:12:18,999 models 21364 14532   - Membresía ID=4: 2025-12-13 a 2026-01-12, pagado=True, activa hoy=False
+DEBUG 2026-02-14 11:12:19,002 models 21364 14532 Buscando membresía activa para cliente 3 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:12:19,004 models 21364 14532 Membresía activa encontrada: ID=5, del 2026-02-13 al 2026-03-15
+DEBUG 2026-02-14 11:12:19,004 models 21364 14532 Membresía 5 - Días restantes: 29
+DEBUG 2026-02-14 11:12:19,005 models 21364 14532 Buscando membresía activa para cliente 2 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:12:19,006 models 21364 14532 Membresía activa encontrada: ID=2, del 2026-01-15 al 2026-02-14
+DEBUG 2026-02-14 11:12:19,006 models 21364 14532 Membresía 2 - Días restantes: 0
+DEBUG 2026-02-14 11:12:19,006 models 21364 14532 Buscando membresía activa para cliente 1 - Fecha actual: 2026-02-14
+DEBUG 2026-02-14 11:12:19,008 models 21364 14532 Membresía activa encontrada: ID=1, del 2026-02-02 al 2026-03-04
+DEBUG 2026-02-14 11:12:19,008 models 21364 14532 Membresía 1 - Días restantes: 18
