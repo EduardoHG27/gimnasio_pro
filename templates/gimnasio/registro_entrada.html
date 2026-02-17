@@ -119,16 +119,16 @@
                             </a>
                         </div>
                     {% endif %}
-                </div>  <!-- ← Cierre correcto del card-body -->
-            </div>      <!-- ← Cierre correcto de la card -->
-        {% endif %}     <!-- ← Cierre correcto de if cliente_info -->
+                </div>
+            </div>
+        {% endif %}
         
-        <!-- Formulario de búsqueda -->
+        <!-- Formulario de búsqueda por CONTRASEÑA -->
         <div class="card mb-4">
             <div class="card-header bg-primary text-white">
                 <h5 class="mb-0">
-                    <i class="fa fa-search"></i> 
-                    Buscar Cliente por Email
+                    <i class="fa fa-key"></i> 
+                    Acceso con Contraseña
                 </h5>
             </div>
             <div class="card-body">
@@ -136,20 +136,21 @@
                     {% csrf_token %}
                     
                     <div class="input-group input-group-lg">
-                        <input type="email" 
-                               name="email" 
+                        <input type="text" 
+                               name="contraseña" 
                                class="form-control" 
-                               placeholder="Ingrese el email del cliente" 
+                               placeholder="Ingrese la contraseña del cliente" 
                                required 
-                               id="id_email"
-                               value="{{ email_buscado|default:'' }}">
+                               id="id_contraseña"
+                               value="{{ contraseña_buscada|default:'' }}"
+                               autocomplete="off">
                         <button type="submit" class="btn btn-primary">
                             <i class="fa fa-search"></i> Buscar
                         </button>
                     </div>
                     <div class="form-text mt-2">
                         <i class="fa fa-info-circle"></i> 
-                        Ingrese el email registrado del cliente para verificar su membresía
+                        Ingrese la contraseña asignada al cliente para registrar su entrada
                     </div>
                 </form>
             </div>
@@ -225,16 +226,16 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('busqueda-form');
-    const emailInput = document.getElementById('id_email');
+    const contraseñaInput = document.getElementById('id_contraseña');
     
     // Seleccionar el texto del input cuando se hace foco
-    emailInput.addEventListener('focus', function() {
+    contraseñaInput.addEventListener('focus', function() {
         this.select();
     });
     
-    // Si hay un email buscado, seleccionarlo para fácil reemplazo
-    {% if email_buscado %}
-        emailInput.select();
+    // Si hay una contraseña buscada, seleccionarla para fácil reemplazo
+    {% if contraseña_buscada %}
+        contraseñaInput.select();
     {% endif %}
 });
 </script>

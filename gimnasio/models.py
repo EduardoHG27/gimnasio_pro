@@ -20,6 +20,7 @@ class Cliente(models.Model):
     email = models.EmailField(unique=True)
     fecha_registro = models.DateTimeField(default=timezone.now)
     activo = models.BooleanField(default=True)
+    contraseña = models.CharField(max_length=20, blank=True, editable=False) 
     
     def get_membresia_activa(self):
         """Retorna la membresía activa del cliente si existe"""
@@ -61,6 +62,33 @@ class Cliente(models.Model):
             self.save(update_fields=['activo'])
         else:
             logger.debug(f"Cliente {self.id} - Estado sin cambios: {self.activo}")
+
+        
+    def generar_contraseña(self):
+        """Genera una contraseña con formato: últimos 2 dígitos del año + últimos 3 dígitos del teléfono"""
+        from datetime import datetime
+        
+        # Obtener últimos 2 dígitos del año actual
+        año_actual = datetime.now().year
+        ultimos_2_año = str(año_actual)[-2:]
+        
+        # Obtener últimos 3 dígitos del teléfono (limpiando el número)
+        telefono_limpio = ''.join(filter(str.isdigit, self.telefono))
+        if len(telefono_limpio) >= 3:
+            ultimos_3_telefono = telefono_limpio[-3:]
+        else:
+            # Si el teléfono tiene menos de 3 dígitos, rellenar con ceros
+            ultimos_3_telefono = telefono_limpio.zfill(3)
+        
+        # Generar contraseña
+        self.contraseña = f"{ultimos_2_año}{ultimos_3_telefono}"
+        return self.contraseña
+    
+    def save(self, *args, **kwargs):
+        # Si es un nuevo cliente y no tiene contraseña, generarla automáticamente
+        if not self.pk and not self.contraseña:
+            self.generar_contraseña()
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.nombre} {self.apellidos}"

@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
+from django.db.models import Exists, OuterRef
 from django.contrib.auth.decorators import login_required
 from django.db.models import Count, Sum
 from django.utils import timezone
@@ -67,17 +68,21 @@ def detalle_cliente(request, pk):
         else:
             messages.warning(request, f'⚠️ El cliente {cliente.nombre} ha sido desactivado automáticamente (su membresía expiró)')
     
+    # 👇 IMPORTANTE: Verificar si se debe mostrar la contraseña
+    mostrar_contraseña = request.GET.get('mostrar_contraseña') == '1'
+    
     membresias = cliente.membresias.all().order_by('-fecha_inicio')
     entradas = cliente.entradas.all()[:10]  # Últimas 10 entradas
     
-    # ✅ ELIMINA ESTA LÍNEA PROBLEMÁTICA:
-    # for membresia in membresias:
-    #     membresia.esta_activa = membresia.esta_activa  # ← ¡NO HACER!
+    # Pasar today al template para los cálculos de fechas
+    today = timezone.now().date()
     
     return render(request, 'gimnasio/clientes/detalle.html', {
         'cliente': cliente,
         'membresias': membresias,
-        'entradas': entradas
+        'entradas': entradas,
+        'mostrar_contraseña': mostrar_contraseña,  # 👈 Esto es lo que faltaba
+        'today': today,  # También needed para los cálculos de membresías
     })
 
 @login_required
@@ -130,6 +135,20 @@ def nueva_membresia(request, cliente_pk=None):
     
     return render(request, 'gimnasio/membresias/form.html', {'form': form, 'accion': 'Nueva'})
 
+
+def regenerar_contraseña(request, pk):
+    """Vista para regenerar la contraseña de un cliente"""
+    if request.method == 'POST':
+        cliente = get_object_or_404(Cliente, pk=pk)
+        nueva_contraseña = cliente.generar_contraseña()
+        cliente.save(update_fields=['contraseña'])
+        
+        messages.success(request, f'✅ Contraseña regenerada exitosamente para {cliente.nombre} {cliente.apellidos}')
+        return redirect('detalle_cliente', pk=cliente.pk)
+    
+    # Si no es POST, redirigir al detalle
+    return redirect('detalle_cliente', pk=pk)
+
 # Vistas de pagos
 @login_required
 def nuevo_pago(request, membresia_pk=None):
@@ -160,95 +179,101 @@ def nuevo_pago(request, membresia_pk=None):
 # Vistas de registro de entrada
 def registro_entrada(request):
     cliente_info = None
-    email_buscado = None
+    contraseña_buscada = None
     
     if request.method == 'POST':
-        form = RegistroEntradaForm(request.POST)
-        if form.is_valid():
-            cliente = form.cleaned_data['email']
-            email_buscado = cliente.email
-            
-            # Actualizar estado del cliente
-            estado_anterior = cliente.activo
-            cliente.actualizar_estado_activo()
-            
-            # Verificar membresía activa
-            membresia_activa = cliente.get_membresia_activa()
-            
-            if membresia_activa:
-                # Cliente con membresía activa - REGISTRAR ENTRADA
-                if not estado_anterior and cliente.activo:
-                    messages.info(request, f'✨ {cliente.nombre} ha sido reactivado automáticamente')
+        contraseña = request.POST.get('contraseña', '').strip()
+        contraseña_buscada = contraseña
+        
+        if contraseña:
+            try:
+                # Buscar cliente por contraseña
+                cliente = Cliente.objects.get(contraseña=contraseña)
                 
-                dias_restantes = membresia_activa.dias_restantes
+                # Actualizar estado del cliente
+                estado_anterior = cliente.activo
+                cliente.actualizar_estado_activo()
                 
-                # Registrar la entrada
-                entrada = RegistroEntrada.objects.create(cliente=cliente)
+                # Verificar membresía activa
+                membresia_activa = cliente.get_membresia_activa()
                 
-                messages.success(
-                    request, 
-                    f'✅ Entrada registrada para {cliente.nombre} {cliente.apellidos}<br>'
-                    f'📅 Membresía vigente por {dias_restantes} días más '
-                    f'(vence: {membresia_activa.fecha_fin.strftime("%d/%m/%Y")})'
-                )
-                
-                cliente_info = {
-                    'nombre': f'{cliente.nombre} {cliente.apellidos}',
-                    'tipo_membresia': membresia_activa.get_tipo_display(),
-                    'fecha_inicio': membresia_activa.fecha_inicio,
-                    'fecha_fin': membresia_activa.fecha_fin,
-                    'dias_restantes': dias_restantes,
-                    'tiene_membresia_activa': True,
-                    'cliente_id': cliente.id
-                }
-            else:
-                # Cliente sin membresía activa - NO REGISTRAR ENTRADA
-                if cliente.activo:
-                    cliente.activo = False
-                    cliente.save(update_fields=['activo'])
+                if membresia_activa:
+                    # Cliente con membresía activa - REGISTRAR ENTRADA
+                    if not estado_anterior and cliente.activo:
+                        messages.info(request, f'✨ {cliente.nombre} ha sido reactivado automáticamente')
+                    
+                    dias_restantes = membresia_activa.dias_restantes
+                    
+                    # Registrar la entrada
+                    entrada = RegistroEntrada.objects.create(cliente=cliente)
+                    
+                    messages.success(
+                        request, 
+                        f'✅ Entrada registrada para {cliente.nombre} {cliente.apellidos}<br>'
+                        f'📅 Membresía vigente por {dias_restantes} días más '
+                        f'(vence: {membresia_activa.fecha_fin.strftime("%d/%m/%Y")})'
+                    )
+                    
+                    cliente_info = {
+                        'nombre': f'{cliente.nombre} {cliente.apellidos}',
+                        'tipo_membresia': membresia_activa.get_tipo_display(),
+                        'fecha_inicio': membresia_activa.fecha_inicio,
+                        'fecha_fin': membresia_activa.fecha_fin,
+                        'dias_restantes': dias_restantes,
+                        'tiene_membresia_activa': True,
+                        'cliente_id': cliente.id
+                    }
+                else:
+                    # Cliente sin membresía activa - NO REGISTRAR ENTRADA
+                    if cliente.activo:
+                        cliente.activo = False
+                        cliente.save(update_fields=['activo'])
+                        messages.warning(
+                            request,
+                            f'⚠️ {cliente.nombre} {cliente.apellidos} ha sido desactivado automáticamente (sin membresía activa)'
+                        )
+                    
+                    # Buscar información de membresías anteriores
+                    ultima_membresia = Membresia.objects.filter(
+                        cliente=cliente
+                    ).order_by('-fecha_fin').first()
+                    
+                    # Preparar información detallada del cliente inactivo
+                    cliente_info = {
+                        'nombre': f'{cliente.nombre} {cliente.apellidos}',
+                        'tiene_membresia_activa': False,
+                        'cliente_id': cliente.id,
+                        'email': cliente.email,
+                        'telefono': cliente.telefono
+                    }
+                    
+                    if ultima_membresia:
+                        cliente_info['ultima_membresia'] = ultima_membresia
+                        cliente_info['tipo_membresia'] = ultima_membresia.get_tipo_display()
+                        cliente_info['fecha_fin'] = ultima_membresia.fecha_fin
+                        
+                        if not ultima_membresia.pagado:
+                            cliente_info['motivo'] = 'membresía pendiente de pago'
+                            cliente_info['membresia_pendiente'] = ultima_membresia
+                        elif ultima_membresia.fecha_fin < timezone.now().date():
+                            cliente_info['motivo'] = 'membresía vencida'
+                            cliente_info['dias_vencida'] = (timezone.now().date() - ultima_membresia.fecha_fin).days
+                    else:
+                        cliente_info['motivo'] = 'sin membresía registrada'
+                    
+                    # Mensaje de advertencia
                     messages.warning(
                         request,
-                        f'⚠️ {cliente.nombre} {cliente.apellidos} ha sido desactivado automáticamente (sin membresía activa)'
+                        f'⚠️ {cliente.nombre} {cliente.apellidos} no tiene una membresía activa.<br>'
+                        f'Motivo: {cliente_info["motivo"]}'
                     )
-                
-                # Buscar información de membresías anteriores
-                ultima_membresia = Membresia.objects.filter(
-                    cliente=cliente
-                ).order_by('-fecha_fin').first()
-                
-                # Preparar información detallada del cliente inactivo
-                cliente_info = {
-                    'nombre': f'{cliente.nombre} {cliente.apellidos}',
-                    'tiene_membresia_activa': False,
-                    'cliente_id': cliente.id,
-                    'email': cliente.email,
-                    'telefono': cliente.telefono
-                }
-                
-                if ultima_membresia:
-                    cliente_info['ultima_membresia'] = ultima_membresia
-                    cliente_info['tipo_membresia'] = ultima_membresia.get_tipo_display()
-                    cliente_info['fecha_fin'] = ultima_membresia.fecha_fin
-                    
-                    if not ultima_membresia.pagado:
-                        cliente_info['motivo'] = 'membresía pendiente de pago'
-                        cliente_info['membresia_pendiente'] = ultima_membresia
-                    elif ultima_membresia.fecha_fin < timezone.now().date():
-                        cliente_info['motivo'] = 'membresía vencida'
-                        cliente_info['dias_vencida'] = (timezone.now().date() - ultima_membresia.fecha_fin).days
-                else:
-                    cliente_info['motivo'] = 'sin membresía registrada'
-                
-                # Mensaje de advertencia
-                messages.warning(
-                    request,
-                    f'⚠️ {cliente.nombre} {cliente.apellidos} no tiene una membresía activa.<br>'
-                    f'Motivo: {cliente_info["motivo"]}'
-                )
-    else:
-        form = RegistroEntradaForm()
+            
+            except Cliente.DoesNotExist:
+                messages.error(request, f'❌ No se encontró ningún cliente con la contraseña "{contraseña}"')
+        else:
+            messages.warning(request, '⚠️ Por favor ingrese una contraseña')
     
-    # Obtener últimos registros (el resto del código permanece igual)
+    # Obtener últimos registros
     ultimos_registros = RegistroEntrada.objects.all().select_related('cliente')[:10]
     
     for registro in ultimos_registros:
@@ -262,10 +287,9 @@ def registro_entrada(request):
         registro.membresia_activa = membresia_en_momento is not None
     
     return render(request, 'gimnasio/registro_entrada.html', {
-        'form': form,
         'ultimos_registros': ultimos_registros,
         'cliente_info': cliente_info,
-        'email_buscado': email_buscado
+        'contraseña_buscada': contraseña_buscada
     })
 
 @login_required
@@ -323,13 +347,23 @@ def dashboard(request):
         pagado=True
     ).select_related('cliente')
     
-    # 🔴 NUEVO: Membresías vencidas (últimos 30 días)
+    # 🟢 CORREGIDO: Solo membresías vencidas de clientes SIN membresía activa
+    from django.db.models import Exists, OuterRef
+
+    clientes_con_membresia_activa = Membresia.objects.filter(
+    cliente=OuterRef('cliente'),
+    fecha_fin__gte=hoy,
+    pagado=True
+)
+
     membresias_vencidas = Membresia.objects.filter(
         fecha_fin__lt=hoy,
-        fecha_fin__gte=hoy - timedelta(days=30),
+        fecha_fin__gte=hoy - timedelta(days=360),
         pagado=True
+    ).exclude(
+        Exists(clientes_con_membresia_activa)
     ).select_related('cliente').order_by('-fecha_fin')
-    
+
     # Calcular días de vencimiento para cada una
     for membresia in membresias_vencidas:
         membresia.dias_vencida = (hoy - membresia.fecha_fin).days
@@ -341,7 +375,7 @@ def dashboard(request):
         'ingresos_mes': ingresos_mes,
         'entradas_hoy': entradas_hoy,
         'proximas_vencer': proximas_vencer,
-        'membresias_vencidas': membresias_vencidas,  # 🔴 NUEVO
+        'membresias_vencidas': membresias_vencidas,
     }
     
     return render(request, 'gimnasio/dashboard.html', context)

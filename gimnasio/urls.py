@@ -10,6 +10,7 @@ urlpatterns = [
     path('clientes/nuevo/', views.nuevo_cliente, name='nuevo_cliente'),
     path('clientes/<int:pk>/', views.detalle_cliente, name='detalle_cliente'),
     path('clientes/<int:pk>/editar/', views.editar_cliente, name='editar_cliente'),
+    path('clientes/<int:pk>/regenerar-contraseña/', views.regenerar_contraseña, name='regenerar_contraseña'), 
     
     # Membresías
     path('membresias/nueva/', views.nueva_membresia, name='nueva_membresia'),

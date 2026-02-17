@@ -1,12 +1,22 @@
 from django import forms
-from django.contrib.auth.models import User
 from .models import Cliente, Membresia, Pago, RegistroEntrada
 from datetime import datetime, timedelta
 
 class ClienteForm(forms.ModelForm):
+    # Campo opcional para mostrar la contraseña generada (solo lectura)
+    contraseña_generada = forms.CharField(
+        label='Contraseña generada',
+        required=False,
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'readonly': 'readonly',
+            'placeholder': 'Se generará automáticamente'
+        })
+    )
+    
     class Meta:
         model = Cliente
-        fields = ['nombre', 'apellidos', 'telefono', 'email', 'activo']
+        fields = ['nombre', 'apellidos', 'telefono', 'email', 'activo', 'contraseña_generada']
         widgets = {
             'nombre': forms.TextInput(attrs={'class': 'form-control'}),
             'apellidos': forms.TextInput(attrs={'class': 'form-control'}),
@@ -15,21 +25,30 @@ class ClienteForm(forms.ModelForm):
             'activo': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
         }
     
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Si estamos editando un cliente existente, mostrar su contraseña actual
+        if self.instance and self.instance.pk and self.instance.contraseña:
+            self.fields['contraseña_generada'].initial = self.instance.contraseña
+        elif self.instance and not self.instance.pk:
+            # Para clientes nuevos, generar una contraseña de ejemplo
+            self.fields['contraseña_generada'].initial = self._generar_contraseña_ejemplo()
+    
+    def _generar_contraseña_ejemplo(self):
+        """Genera un ejemplo de contraseña basado en el año actual"""
+        año_actual = datetime.now().year
+        ultimos_2_año = str(año_actual)[-2:]
+        return f"{ultimos_2_año}123"  # Ejemplo con 123 como últimos dígitos
+    
     def save(self, commit=True):
         cliente = super().save(commit=False)
-        if self.cleaned_data.get('password'):
-            if not cliente.usuario:
-                user = User.objects.create_user(
-                    username=cliente.email,
-                    email=cliente.email,
-                    password=self.cleaned_data['password'],
-                    first_name=cliente.nombre,
-                    last_name=cliente.apellidos
-                )
-                cliente.usuario = user
-            else:
-                cliente.usuario.set_password(self.cleaned_data['password'])
-                cliente.usuario.save()
+        
+        # Si es un cliente nuevo, generar contraseña automáticamente
+        if not cliente.pk:
+            cliente.generar_contraseña()
+        # Si se modificó el teléfono, regenerar contraseña
+        elif 'telefono' in self.changed_data:
+            cliente.generar_contraseña()
         
         if commit:
             cliente.save()
@@ -86,18 +105,20 @@ class PagoForm(forms.ModelForm):
         }
 
 class RegistroEntradaForm(forms.Form):
-    email = forms.EmailField(
-        label='Email del cliente',
-        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'cliente@email.com'})
+    contraseña = forms.CharField(
+        max_length=20,
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Ingrese la contraseña del cliente',
+            'autocomplete': 'off'
+        }),
+        label='Contraseña'
     )
     
-    def clean_email(self):
-        email = self.cleaned_data.get('email')
-        
+    def clean_contraseña(self):
+        contraseña = self.cleaned_data['contraseña']
         try:
-            # SOLO verificar que el cliente existe
-            cliente = Cliente.objects.get(email=email)
+            cliente = Cliente.objects.get(contraseña=contraseña)
             return cliente
         except Cliente.DoesNotExist:
-            raise forms.ValidationError('Cliente no encontrado')
-        
+            raise forms.ValidationError('No existe un cliente con esa contraseña')
