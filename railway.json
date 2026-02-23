@@ -4,7 +4,7 @@
     "buildCommand": "python manage.py collectstatic --noinput"
   },
   "deploy": {
-    "startCommand": "python manage.py migrate && python manage.py shell -c \"from django.contrib.auth import get_user_model; User=get_user_model(); import os; username=os.environ.get('DJANGO_SUPERUSER_USERNAME','').replace(' ','_'); email=os.environ.get('DJANGO_SUPERUSER_EMAIL',''); password=os.environ.get('DJANGO_SUPERUSER_PASSWORD',''); print(f'Usuario: {username}'); print(f'Email: {email}'); if username and password and not User.objects.filter(username=username).exists(): User.objects.create_superuser(username, email, password); print(f'Superusuario {username} creado correctamente'); else: print('Superusuario ya existe o faltan variables');\" && gunicorn gimnasio_project.wsgi",
+    "startCommand": "python manage.py migrate && export CLEAN_USERNAME=$(echo $DJANGO_SUPERUSER_USERNAME | tr ' ' '_') && python manage.py createsuperuser --noinput --username=$CLEAN_USERNAME --email=$DJANGO_SUPERUSER_EMAIL 2>/dev/null || true && gunicorn gimnasio_project.wsgi",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
   }
