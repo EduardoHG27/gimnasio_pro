@@ -2,220 +2,249 @@
 {% load static %}
 
 {% block content %}
-<div class="row">
-    <div class="col-md-6 offset-md-3">
-        <h1 class="text-center mb-4">
-            <i class="fa fa-box-arrow-in-right"></i> 
-            Registro de Entrada
-        </h1>
-        
-        <!-- Mensajes del sistema -->
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-{% if message.tags == 'warning' %}warning{% else %}success{% endif %} alert-dismissible fade show" role="alert">
-                    {{ message|safe }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                </div>
-            {% endfor %}
-        {% endif %}
-        
-        <!-- Información del cliente buscado -->
-        {% if cliente_info %}
-            <div class="card mb-4 {% if cliente_info.tiene_membresia_activa %}border-success{% else %}border-danger{% endif %}">
-                <div class="card-header {% if cliente_info.tiene_membresia_activa %}bg-success text-white{% else %}bg-danger text-white{% endif %}">
-                    <h5 class="mb-0">
-                        <i class="fa fa-person-circle"></i> 
-                        Cliente: {{ cliente_info.nombre }}
-                    </h5>
-                </div>
-                <div class="card-body">
-                    {% if cliente_info.tiene_membresia_activa %}
-                        <!-- CLIENTE ACTIVO - CON MEMBRESÍA VIGENTE -->
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="alert alert-success mb-0">
-                                    <i class="fa fa-check-circle-fill"></i>
-                                    <strong>¡Membresía activa!</strong><br>
-                                    Tipo: {{ cliente_info.tipo_membresia }}<br>
-                                    Vence: {{ cliente_info.fecha_fin|date:"d/m/Y" }}
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card bg-info text-white">
-                                    <div class="card-body text-center">
-                                        <h3 class="display-4">{{ cliente_info.dias_restantes }}</h3>
-                                        <p class="mb-0">días restantes</p>
+<div class="container-fluid px-2 px-sm-3 px-md-4">
+    <div class="row">
+        <div class="col-12 col-md-10 col-lg-8 mx-auto">
+            <h1 class="text-center mb-3 mb-md-4 fs-2 fs-md-1">
+                <i class="fa fa-box-arrow-in-right"></i> 
+                Registro de Entrada
+            </h1>
+            
+            <!-- Mensajes del sistema -->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{% if message.tags == 'warning' %}warning{% else %}success{% endif %} alert-dismissible fade show py-2 py-md-3" role="alert">
+                        {{ message|safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            
+            <!-- Información del cliente buscado -->
+            {% if cliente_info %}
+                <div class="card mb-3 mb-md-4 {% if cliente_info.tiene_membresia_activa %}border-success{% else %}border-danger{% endif %}">
+                    <div class="card-header {% if cliente_info.tiene_membresia_activa %}bg-success text-white{% else %}bg-danger text-white{% endif %} py-2 py-md-3">
+                        <h5 class="mb-0 fs-6 fs-md-5">
+                            <i class="fa fa-person-circle"></i> 
+                            Cliente: <span class="d-inline-block text-truncate" style="max-width: 200px;">{{ cliente_info.nombre }}</span>
+                        </h5>
+                    </div>
+                    <div class="card-body p-2 p-md-3">
+                        {% if cliente_info.tiene_membresia_activa %}
+                            <!-- CLIENTE ACTIVO - CON MEMBRESÍA VIGENTE -->
+                            <div class="row g-2">
+                                <div class="col-12 col-md-8">
+                                    <div class="alert alert-success mb-0 p-2 p-md-3">
+                                        <i class="fa fa-check-circle-fill"></i>
+                                        <strong>¡Membresía activa!</strong><br>
+                                        Tipo: {{ cliente_info.tipo_membresia }}<br>
+                                        Vence: {{ cliente_info.fecha_fin|date:"d/m/Y" }}
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-3">
-                            <a href="{% url 'nueva_membresia_cliente' cliente_info.cliente_id %}" 
-                               class="btn btn-primary">
-                                <i class="fa fa-arrow-repeat"></i> 
-                                Renovar Membresía
-                            </a>
-                            <a href="{% url 'detalle_cliente' cliente_info.cliente_id %}" 
-                               class="btn btn-outline-secondary">
-                                <i class="fa fa-eye"></i> 
-                                Ver Detalle
-                            </a>
-                        </div>
-                    
-                    {% else %}
-                        <!-- CLIENTE INACTIVO - SIN MEMBRESÍA VIGENTE -->
-                        <div class="alert alert-danger">
-                            <i class="fa fa-exclamation-triangle-fill"></i>
-                            <strong>¡Cliente sin membresía activa!</strong>
-                            <p class="mb-0 mt-2">
-                                Motivo: 
-                                {% if cliente_info.motivo == 'membresía vencida' %}
-                                    La membresía del cliente venció hace 
-                                    <strong>{{ cliente_info.dias_vencida }} días</strong> 
-                                    ({{ cliente_info.fecha_fin|date:"d/m/Y" }})
-                                {% elif cliente_info.motivo == 'membresía pendiente de pago' %}
-                                    El cliente tiene una membresía pendiente de pago
-                                {% else %}
-                                    El cliente no tiene ninguna membresía registrada
-                                {% endif %}
-                            </p>
-                        </div>
-                        
-                        <div class="row mt-3">
-                            <div class="col-md-6">
-                                <div class="card bg-light">
-                                    <div class="card-body">
-                                        <h6 class="card-title"><i class="fa fa-info-circle"></i> Información de contacto</h6>
-                                        <p class="mb-1"><strong>Email:</strong> {{ cliente_info.email }}</p>
-                                        <p class="mb-0"><strong>Teléfono:</strong> {{ cliente_info.telefono }}</p>
+                                <div class="col-12 col-md-4">
+                                    <div class="card bg-info text-white">
+                                        <div class="card-body text-center p-2 p-md-3">
+                                            <h3 class="display-4 mb-0 fs-1 fs-md-display-4">{{ cliente_info.dias_restantes }}</h3>
+                                            <p class="mb-0 small">días restantes</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             
-                            {% if cliente_info.ultima_membresia %}
-                            <div class="col-md-6">
-                                <div class="card bg-light">
-                                    <div class="card-body">
-                                        <h6 class="card-title"><i class="fa fa-clock-history"></i> Última membresía</h6>
-                                        <p class="mb-1"><strong>Tipo:</strong> {{ cliente_info.tipo_membresia }}</p>
-                                        <p class="mb-0"><strong>Venció:</strong> {{ cliente_info.fecha_fin|date:"d/m/Y" }}</p>
+                            <div class="mt-2 mt-md-3 d-flex flex-column flex-sm-row gap-2">
+                                <a href="{% url 'nueva_membresia_cliente' cliente_info.cliente_id %}" 
+                                   class="btn btn-primary w-100 w-sm-auto">
+                                    <i class="fa fa-arrow-repeat"></i> 
+                                    Renovar Membresía
+                                </a>
+                                <a href="{% url 'detalle_cliente' cliente_info.cliente_id %}" 
+                                   class="btn btn-outline-secondary w-100 w-sm-auto">
+                                    <i class="fa fa-eye"></i> 
+                                    Ver Detalle
+                                </a>
+                            </div>
+                        
+                        {% else %}
+                            <!-- CLIENTE INACTIVO - SIN MEMBRESÍA VIGENTE -->
+                            <div class="alert alert-danger p-2 p-md-3">
+                                <i class="fa fa-exclamation-triangle-fill"></i>
+                                <strong>¡Cliente sin membresía activa!</strong>
+                                <p class="mb-0 mt-2 small">
+                                    Motivo: 
+                                    {% if cliente_info.motivo == 'membresía vencida' %}
+                                        La membresía del cliente venció hace 
+                                        <strong>{{ cliente_info.dias_vencida }} días</strong> 
+                                        ({{ cliente_info.fecha_fin|date:"d/m/Y" }})
+                                    {% elif cliente_info.motivo == 'membresía pendiente de pago' %}
+                                        El cliente tiene una membresía pendiente de pago
+                                    {% else %}
+                                        El cliente no tiene ninguna membresía registrada
+                                    {% endif %}
+                                </p>
+                            </div>
+                            
+                            <div class="row g-2 mt-2 mt-md-3">
+                                <div class="col-12 col-sm-6">
+                                    <div class="card bg-light h-100">
+                                        <div class="card-body p-2 p-md-3">
+                                            <h6 class="card-title fs-6"><i class="fa fa-info-circle"></i> Contacto</h6>
+                                            <p class="mb-1 small text-break"><strong>Email:</strong> {{ cliente_info.email }}</p>
+                                            <p class="mb-0 small"><strong>Teléfono:</strong> {{ cliente_info.telefono }}</p>
+                                        </div>
                                     </div>
                                 </div>
+                                
+                                {% if cliente_info.ultima_membresia %}
+                                <div class="col-12 col-sm-6">
+                                    <div class="card bg-light h-100">
+                                        <div class="card-body p-2 p-md-3">
+                                            <h6 class="card-title fs-6"><i class="fa fa-clock-history"></i> Última membresía</h6>
+                                            <p class="mb-1 small"><strong>Tipo:</strong> {{ cliente_info.tipo_membresia }}</p>
+                                            <p class="mb-0 small"><strong>Venció:</strong> {{ cliente_info.fecha_fin|date:"d/m/Y" }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endif %}
                             </div>
-                            {% endif %}
-                        </div>
+                            
+                            <div class="mt-2 mt-md-3 d-flex flex-column flex-sm-row gap-2">
+                                <a href="{% url 'nueva_membresia_cliente' cliente_info.cliente_id %}" 
+                                   class="btn btn-success w-100 w-sm-auto">
+                                    <i class="fa fa-plus-circle"></i> 
+                                    Activar Nueva Membresía
+                                </a>
+                                <a href="{% url 'detalle_cliente' cliente_info.cliente_id %}" 
+                                   class="btn btn-outline-secondary w-100 w-sm-auto">
+                                    <i class="fa fa-eye"></i> 
+                                    Ver Detalle
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+            
+            <!-- Formulario de búsqueda por CONTRASEÑA -->
+            <div class="card mb-3 mb-md-4">
+                <div class="card-header bg-primary text-white py-2 py-md-3">
+                    <h5 class="mb-0 fs-6 fs-md-5">
+                        <i class="fa fa-key"></i> 
+                        Acceso con Contraseña
+                    </h5>
+                </div>
+                <div class="card-body p-2 p-md-3">
+                    <form method="post" id="busqueda-form">
+                        {% csrf_token %}
                         
-                        <div class="mt-3 d-flex gap-2">
-                            <a href="{% url 'nueva_membresia_cliente' cliente_info.cliente_id %}" 
-                               class="btn btn-success">
-                                <i class="fa fa-plus-circle"></i> 
-                                Activar Nueva Membresía
-                            </a>
-                            <a href="{% url 'detalle_cliente' cliente_info.cliente_id %}" 
-                               class="btn btn-outline-secondary">
-                                <i class="fa fa-eye"></i> 
-                                Ver Detalle
-                            </a>
+                        <div class="input-group">
+                            <input type="text" 
+                                   name="contraseña" 
+                                   class="form-control form-control-lg" 
+                                   placeholder="Ingrese la contraseña" 
+                                   required 
+                                   id="id_contraseña"
+                                   value="{{ contraseña_buscada|default:'' }}"
+                                   autocomplete="off">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-search d-sm-none"></i>
+                                <span class="d-none d-sm-inline">Buscar</span>
+                            </button>
                         </div>
-                    {% endif %}
+                        <div class="form-text mt-2 small">
+                            <i class="fa fa-info-circle"></i> 
+                            Ingrese la contraseña asignada al cliente
+                        </div>
+                    </form>
                 </div>
             </div>
-        {% endif %}
-        
-        <!-- Formulario de búsqueda por CONTRASEÑA -->
-        <div class="card mb-4">
-            <div class="card-header bg-primary text-white">
-                <h5 class="mb-0">
-                    <i class="fa fa-key"></i> 
-                    Acceso con Contraseña
-                </h5>
-            </div>
-            <div class="card-body">
-                <form method="post" id="busqueda-form">
-                    {% csrf_token %}
+            
+            <!-- Últimos registros -->
+            <div class="card">
+                <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center py-2 py-md-3">
+                    <h5 class="mb-0 fs-6 fs-md-5">
+                        <i class="fa fa-clock-history"></i> 
+                        Últimos Registros
+                    </h5>
+                    <span class="badge bg-light text-dark">{{ ultimos_registros|length }} registros</span>
+                </div>
+                <div class="card-body p-0 p-md-2">
+                    <div class="table-responsive">
+                        <table class="table table-sm table-hover mb-0">
+                            <thead class="table-light d-none d-md-table-header-group">
+                                <tr>
+                                    <th>Cliente</th>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Estado</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for registro in ultimos_registros %}
+                                <tr class="d-block d-md-table-row border-bottom p-2 p-md-0">
+                                    <!-- Versión móvil (cards) -->
+                                    <td colspan="5" class="d-block d-md-none border-0 p-0">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <strong>{{ registro.cliente.nombre }} {{ registro.cliente.apellidos }}</strong><br>
+                                                <small class="text-muted">
+                                                    {{ registro.fecha_entrada|date:"d/m/Y H:i:s" }}
+                                                </small>
+                                            </div>
+                                            <div class="text-end">
+                                                {% if registro.membresia_activa %}
+                                                    <span class="badge bg-success mb-2">Activa</span>
+                                                {% else %}
+                                                    <span class="badge bg-danger mb-2">Sin membresía</span>
+                                                {% endif %}
+                                                <br>
+                                                <a href="{% url 'detalle_cliente' registro.cliente.pk %}" 
+                                                   class="btn btn-sm btn-outline-info"
+                                                   title="Ver detalle">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    
+                                    <!-- Versión desktop (tabla) -->
+                                    <td class="d-none d-md-table-cell">
+                                        <strong>{{ registro.cliente.nombre }} {{ registro.cliente.apellidos }}</strong>
+                                    </td>
+                                    <td class="d-none d-md-table-cell">{{ registro.fecha_entrada|date:"d/m/Y" }}</td>
+                                    <td class="d-none d-md-table-cell">{{ registro.fecha_entrada|date:"H:i:s" }}</td>
+                                    <td class="d-none d-md-table-cell">
+                                        {% if registro.membresia_activa %}
+                                            <span class="badge bg-success">Activa</span>
+                                        {% else %}
+                                            <span class="badge bg-danger">Sin membresía</span>
+                                        {% endif %}
+                                    </td>
+                                    <td class="d-none d-md-table-cell">
+                                        <a href="{% url 'detalle_cliente' registro.cliente.pk %}" 
+                                           class="btn btn-sm btn-outline-info"
+                                           title="Ver detalle">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="5" class="text-center text-muted py-4">
+                                        <i class="fa fa-inbox fs-3 d-block"></i>
+                                        No hay registros recientes
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                     
-                    <div class="input-group input-group-lg">
-                        <input type="text" 
-                               name="contraseña" 
-                               class="form-control" 
-                               placeholder="Ingrese la contraseña del cliente" 
-                               required 
-                               id="id_contraseña"
-                               value="{{ contraseña_buscada|default:'' }}"
-                               autocomplete="off">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fa fa-search"></i> Buscar
-                        </button>
+                    <div class="text-end mt-2 mt-md-3 p-2 p-md-0">
+                        <a href="{% url 'historial_entradas' %}" class="btn btn-sm btn-outline-primary">
+                            Ver historial completo <i class="fa fa-arrow-right"></i>
+                        </a>
                     </div>
-                    <div class="form-text mt-2">
-                        <i class="fa fa-info-circle"></i> 
-                        Ingrese la contraseña asignada al cliente para registrar su entrada
-                    </div>
-                </form>
-            </div>
-        </div>
-        
-        <!-- Últimos registros -->
-        <div class="card">
-            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">
-                    <i class="fa fa-clock-history"></i> 
-                    Últimos Registros
-                </h5>
-                <span class="badge bg-light text-dark">{{ ultimos_registros|length }} registros</span>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-sm table-hover">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Cliente</th>
-                                <th>Fecha</th>
-                                <th>Hora</th>
-                                <th>Estado</th>
-                                <th>Acción</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for registro in ultimos_registros %}
-                            <tr>
-                                <td>
-                                    <strong>{{ registro.cliente.nombre }} {{ registro.cliente.apellidos }}</strong>
-                                </td>
-                                <td>{{ registro.fecha_entrada|date:"d/m/Y" }}</td>
-                                <td>{{ registro.fecha_entrada|date:"H:i:s" }}</td>
-                                <td>
-                                    {% if registro.membresia_activa %}
-                                        <span class="badge bg-success">Activa</span>
-                                    {% else %}
-                                        <span class="badge bg-danger">Sin membresía</span>
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    <a href="{% url 'detalle_cliente' registro.cliente.pk %}" 
-                                       class="btn btn-sm btn-outline-info"
-                                       title="Ver detalle">
-                                        <i class="fa fa-eye"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            {% empty %}
-                            <tr>
-                                <td colspan="5" class="text-center text-muted py-4">
-                                    <i class="fa fa-inbox fs-3 d-block"></i>
-                                    No hay registros recientes
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-                
-                <div class="text-end mt-3">
-                    <a href="{% url 'historial_entradas' %}" class="btn btn-sm btn-outline-primary">
-                        Ver historial completo <i class="fa fa-arrow-right"></i>
-                    </a>
                 </div>
             </div>
         </div>
@@ -228,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('busqueda-form');
     const contraseñaInput = document.getElementById('id_contraseña');
     
-    // Seleccionar el texto del input cuando se hace foco
+    // Prevenir zoom en iOS al enfocar input
     contraseñaInput.addEventListener('focus', function() {
         this.select();
     });
@@ -237,12 +266,22 @@ document.addEventListener('DOMContentLoaded', function() {
     {% if contraseña_buscada %}
         contraseñaInput.select();
     {% endif %}
+    
+    // Ajustar el viewport para dispositivos móviles
+    const metaViewport = document.querySelector('meta[name="viewport"]');
+    if (!metaViewport) {
+        const meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes';
+        document.head.appendChild(meta);
+    }
 });
 </script>
 
 <style>
+    /* Estilos responsive mejorados */
     .display-4 {
-        font-size: 2.5rem;
+        font-size: calc(1.5rem + 1vw);
         font-weight: bold;
         line-height: 1;
     }
@@ -253,6 +292,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     .alert {
         border-left-width: 4px;
+        word-wrap: break-word;
     }
     
     .alert-success {
@@ -269,6 +309,88 @@ document.addEventListener('DOMContentLoaded', function() {
     
     .gap-2 {
         gap: 0.5rem;
+    }
+    
+    /* Mejoras para móviles */
+    @media (max-width: 767.98px) {
+        .btn {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.9rem;
+        }
+        
+        .input-group-lg > .form-control {
+            font-size: 16px; /* Previene zoom automático en iOS */
+            padding: 0.5rem 0.75rem;
+        }
+        
+        .card-body {
+            padding: 0.75rem;
+        }
+        
+        .table td, .table th {
+            padding: 0.5rem;
+        }
+        
+        /* Mejorar touch targets */
+        .btn, .btn-close, [role="button"] {
+            min-height: 44px;
+            min-width: 44px;
+        }
+        
+        /* Ajustar espaciado */
+        .container-fluid {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        
+        /* Texto más legible */
+        .small {
+            font-size: 0.85rem;
+        }
+        
+        /* Break words largos */
+        .text-break {
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+    }
+    
+    /* Tablets */
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .container-fluid {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+        .display-4 {
+            font-size: 2rem;
+        }
+    }
+    
+    /* Desktop */
+    @media (min-width: 992px) {
+        .container-fluid {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+    
+    /* Mejoras de accesibilidad */
+    .btn:focus, .form-control:focus {
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        outline: none;
+    }
+    
+    /* Transiciones suaves */
+    .card, .btn, .alert {
+        transition: all 0.3s ease;
+    }
+    
+    /* Truncamiento seguro */
+    .text-truncate {
+        max-width: 100%;
+        display: inline-block;
+        vertical-align: middle;
     }
 </style>
 {% endblock %}

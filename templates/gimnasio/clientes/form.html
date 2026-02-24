@@ -2,59 +2,439 @@
 
 {% block content %}
 <div class="row">
-    <div class="col-md-8 offset-md-2">
-        <h1>{{ accion }} Cliente</h1>
+    <div class="col-12 col-md-10 col-lg-8 mx-auto">
+        <!-- Header responsive -->
+        <div class="d-flex align-items-center mb-3 mb-md-4">
+            <a href="{% url 'lista_clientes' %}" class="btn btn-outline-secondary btn-sm me-3 d-md-none">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h1 class="h2 mb-0">
+                <i class="fas fa-user-{{ accion|lower }} me-2"></i>
+                <span class="d-none d-sm-inline">{{ accion }} Cliente</span>
+                <span class="d-sm-none">{{ accion }}</span>
+            </h1>
+        </div>
         
-        <div class="card mt-4">
-            <div class="card-body">
-                <form method="post">
+        <!-- Tarjeta del formulario -->
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white py-3">
+                <h5 class="mb-0">
+                    <i class="fas fa-edit me-2"></i>
+                    Complete la información del cliente
+                </h5>
+            </div>
+            
+            <div class="card-body p-3 p-md-4">
+                <form method="post" novalidate id="clienteForm">
                     {% csrf_token %}
                     
-                    <div class="mb-3">
-                        <label for="{{ form.nombre.id_for_label }}" class="form-label">Nombre</label>
-                        {{ form.nombre.errors }}
-                        {{ form.nombre }}
+                    <!-- Mostrar errores generales del formulario -->
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {% for error in form.non_field_errors %}
+                                {{ error }}
+                            {% endfor %}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    {% endif %}
+                    
+                    <!-- Fila para móvil: campos en columna -->
+                    <div class="row g-3">
+                        <!-- Nombre -->
+                        <div class="col-12 col-md-6">
+                            <div class="form-floating mb-2 mb-md-3">
+                                <input type="text" 
+                                       name="{{ form.nombre.name }}" 
+                                       id="{{ form.nombre.id_for_label }}"
+                                       class="form-control {% if form.nombre.errors %}is-invalid{% endif %}"
+                                       placeholder="Nombre"
+                                       value="{{ form.nombre.value|default:'' }}"
+                                       required>
+                                <label for="{{ form.nombre.id_for_label }}">
+                                    <i class="fas fa-user me-2 d-none d-sm-inline"></i>
+                                    Nombre <span class="text-danger">*</span>
+                                </label>
+                                {% if form.nombre.errors %}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.nombre.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <!-- Apellidos -->
+                        <div class="col-12 col-md-6">
+                            <div class="form-floating mb-2 mb-md-3">
+                                <input type="text" 
+                                       name="{{ form.apellidos.name }}" 
+                                       id="{{ form.apellidos.id_for_label }}"
+                                       class="form-control {% if form.apellidos.errors %}is-invalid{% endif %}"
+                                       placeholder="Apellidos"
+                                       value="{{ form.apellidos.value|default:'' }}"
+                                       required>
+                                <label for="{{ form.apellidos.id_for_label }}">
+                                    <i class="fas fa-user me-2 d-none d-sm-inline"></i>
+                                    Apellidos <span class="text-danger">*</span>
+                                </label>
+                                {% if form.apellidos.errors %}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.apellidos.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <!-- Teléfono -->
+                        <div class="col-12 col-md-6">
+                            <div class="form-floating mb-2 mb-md-3">
+                                <input type="tel" 
+                                       name="{{ form.telefono.name }}" 
+                                       id="{{ form.telefono.id_for_label }}"
+                                       class="form-control {% if form.telefono.errors %}is-invalid{% endif %}"
+                                       placeholder="Teléfono"
+                                       value="{{ form.telefono.value|default:'' }}"
+                                       pattern="[0-9]{10,15}"
+                                       title="Ingrese solo números (10-15 dígitos)">
+                                <label for="{{ form.telefono.id_for_label }}">
+                                    <i class="fas fa-phone me-2 d-none d-sm-inline"></i>
+                                    Teléfono
+                                </label>
+                                {% if form.telefono.errors %}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.telefono.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                                <div class="form-text small d-none d-md-block">
+                                    <i class="fas fa-info-circle me-1"></i>
+                                    Formato: 10-15 dígitos
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="col-12 col-md-6">
+                            <div class="form-floating mb-2 mb-md-3">
+                                <input type="email" 
+                                       name="{{ form.email.name }}" 
+                                       id="{{ form.email.id_for_label }}"
+                                       class="form-control {% if form.email.errors %}is-invalid{% endif %}"
+                                       placeholder="Email"
+                                       value="{{ form.email.value|default:'' }}">
+                                <label for="{{ form.email.id_for_label }}">
+                                    <i class="fas fa-envelope me-2 d-none d-sm-inline"></i>
+                                    Email
+                                </label>
+                                {% if form.email.errors %}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.email.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <!-- Contraseña (solo si es nuevo cliente) -->
+                        {% if accion == "Nuevo" %}
+                        <div class="col-12">
+                            <div class="form-floating mb-2 mb-md-3">
+                                <input type="text" 
+                                       name="contraseña" 
+                                       id="id_contraseña"
+                                       class="form-control"
+                                       placeholder="Contraseña"
+                                       value="{{ contraseña|default:'' }}"
+                                       readonly>
+                                <label for="id_contraseña">
+                                    <i class="fas fa-key me-2 d-none d-sm-inline"></i>
+                                    Contraseña asignada
+                                </label>
+                                <div class="form-text small">
+                                    <i class="fas fa-info-circle me-1"></i>
+                                    Contraseña generada automáticamente para acceso al gimnasio
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        
+                        <!-- Estado Activo -->
+                        <div class="col-12">
+                            <div class="card bg-light border-0 mb-3">
+                                <div class="card-body py-3">
+                                    <div class="form-check form-switch">
+                                        {{ form.activo }}
+                                        <label class="form-check-label" for="{{ form.activo.id_for_label }}">
+                                            <strong>Cliente activo</strong>
+                                        </label>
+                                        <div class="form-text small text-muted mt-1">
+                                            <i class="fas fa-info-circle me-1"></i>
+                                            Desactive esta opción si el cliente ya no asiste al gimnasio
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="mb-3">
-                        <label for="{{ form.apellidos.id_for_label }}" class="form-label">Apellidos</label>
-                        {{ form.apellidos.errors }}
-                        {{ form.apellidos }}
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="{{ form.telefono.id_for_label }}" class="form-label">Teléfono</label>
-                        {{ form.telefono.errors }}
-                        {{ form.telefono }}
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
-                        {{ form.email.errors }}
-                        {{ form.email }}
-                    </div>
-                    
-                    <div class="mb-3 form-check">
-                        {{ form.activo }}
-                        <label class="form-check-label" for="{{ form.activo.id_for_label }}">
-                            Activo
-                        </label>
-                    </div>
-                    
-                    <div class="text-end">
-                        <button type="submit" class="btn btn-primary">Guardar</button>
-                        <a href="{% url 'lista_clientes' %}" class="btn btn-secondary">Cancelar</a>
+                    <!-- Botones de acción responsive -->
+                    <div class="d-flex flex-column flex-sm-row justify-content-end gap-2 mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg flex-fill flex-sm-grow-0 px-sm-5">
+                            <i class="fas fa-save me-2"></i>
+                            <span class="d-none d-sm-inline">Guardar</span>
+                            <span class="d-sm-none">Guardar</span>
+                        </button>
+                        <a href="{% url 'lista_clientes' %}" class="btn btn-outline-secondary btn-lg flex-fill flex-sm-grow-0 px-sm-5">
+                            <i class="fas fa-times me-2"></i>
+                            <span class="d-none d-sm-inline">Cancelar</span>
+                            <span class="d-sm-none">Cancelar</span>
+                        </a>
                     </div>
                 </form>
+            </div>
+        </div>
+        
+        <!-- Información adicional (solo desktop) -->
+        <div class="row mt-4 d-none d-md-flex">
+            <div class="col-12">
+                <div class="alert alert-info">
+                    <div class="d-flex">
+                        <div class="me-3">
+                            <i class="fas fa-lightbulb fa-2x"></i>
+                        </div>
+                        <div>
+                            <h6 class="alert-heading">Consejos útiles</h6>
+                            <p class="mb-0 small">
+                                <i class="fas fa-check-circle text-success me-2"></i>
+                                Los campos marcados con <span class="text-danger">*</span> son obligatorios.<br>
+                                <i class="fas fa-check-circle text-success me-2"></i>
+                                El teléfono debe contener solo números (10-15 dígitos).<br>
+                                <i class="fas fa-check-circle text-success me-2"></i>
+                                El email debe ser válido para recibir notificaciones.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Estilos responsivos adicionales -->
+<style>
+/* Ajustes para móviles */
+@media (max-width: 575.98px) {
+    .form-floating {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .form-floating > label {
+        padding: 0.8rem 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .form-floating > .form-control {
+        height: calc(3.5rem + 2px);
+        padding: 0.8rem 0.75rem;
+        font-size: 16px; /* Evita zoom en iOS */
+    }
+    
+    .btn-lg {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .card-header {
+        padding: 1rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    /* Mejorar espaciado para touch */
+    .form-check-input {
+        width: 2.5rem;
+        height: 1.5rem;
+        margin-right: 0.5rem;
+    }
+    
+    .form-check-label {
+        font-size: 1rem;
+        padding-top: 0.2rem;
+    }
+}
+
+/* Ajustes para tablets */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .form-floating {
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .btn-lg {
+        padding: 0.75rem 2rem;
+    }
+}
+
+/* Animaciones y efectos */
+.card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+}
+
+.form-floating > .form-control:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+.form-floating > .form-control.is-invalid:focus {
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.15);
+}
+
+/* Mejoras para inputs táctiles */
+@media (hover: none) and (pointer: coarse) {
+    .form-floating > .form-control {
+        font-size: 16px; /* Previene zoom automático */
+    }
+    
+    .btn {
+        padding: 0.75rem 1rem;
+    }
+    
+    .btn-lg {
+        padding: 1rem 1.5rem;
+    }
+    
+    /* Feedback táctil */
+    .btn:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Estilo para campos de solo lectura */
+input[readonly] {
+    background-color: #f8f9fa;
+    cursor: default;
+}
+
+/* Validación visual en tiempo real */
+.form-control:valid:not(.is-invalid):not(:placeholder-shown) {
+    border-color: #198754;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* Tooltips responsivos */
+@media (max-width: 768px) {
+    [title] {
+        pointer-events: none;
+    }
+}
+</style>
+
+<!-- Scripts para mejorar UX en móviles -->
 <script>
-    // Agregar clases de Bootstrap a los campos del formulario
-    document.querySelectorAll('input:not([type=checkbox]), select, textarea').forEach(function(element) {
-        element.classList.add('form-control');
+document.addEventListener('DOMContentLoaded', function() {
+    // Prevenir zoom en inputs en iOS
+    const form = document.getElementById('clienteForm');
+    const inputs = form.querySelectorAll('input[type="text"], input[type="tel"], input[type="email"]');
+    
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.style.fontSize = '16px';
+        });
+        
+        input.addEventListener('blur', function() {
+            this.style.fontSize = '';
+        });
     });
+    
+    // Validación de teléfono en tiempo real
+    const telefono = document.querySelector('[name="telefono"]');
+    if (telefono) {
+        telefono.addEventListener('input', function() {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    }
+    
+    // Scroll suave al primer error
+    const firstInvalid = document.querySelector('.is-invalid');
+    if (firstInvalid) {
+        firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    
+    // Confirmación antes de cancelar si hay cambios
+    let formChanged = false;
+    
+    inputs.forEach(input => {
+        input.addEventListener('input', () => formChanged = true);
+    });
+    
+    const cancelBtn = document.querySelector('a[href="{% url "lista_clientes" %}"]');
+    if (cancelBtn) {
+        cancelBtn.addEventListener('click', function(e) {
+            if (formChanged) {
+                if (!confirm('¿Estás seguro de cancelar? Los cambios no guardados se perderán.')) {
+                    e.preventDefault();
+                }
+            }
+        });
+    }
+});
+
+// Auto-guardado en local storage para móviles
+if (window.innerWidth < 768) {
+    const form = document.getElementById('clienteForm');
+    const formKey = 'clienteForm_' + window.location.pathname;
+    
+    // Cargar datos guardados
+    const savedData = localStorage.getItem(formKey);
+    if (savedData) {
+        try {
+            const data = JSON.parse(savedData);
+            Object.keys(data).forEach(key => {
+                const input = document.querySelector(`[name="${key}"]`);
+                if (input && input.type !== 'checkbox' && input.type !== 'hidden') {
+                    input.value = data[key];
+                } else if (input && input.type === 'checkbox') {
+                    input.checked = data[key];
+                }
+            });
+        } catch (e) {
+            console.log('Error cargando datos guardados');
+        }
+    }
+    
+    // Guardar cambios
+    form.addEventListener('input', function(e) {
+        const formData = {};
+        inputs.forEach(input => {
+            if (input.type === 'checkbox') {
+                formData[input.name] = input.checked;
+            } else {
+                formData[input.name] = input.value;
+            }
+        });
+        localStorage.setItem(formKey, JSON.stringify(formData));
+    });
+    
+    // Limpiar al guardar
+    form.addEventListener('submit', function() {
+        localStorage.removeItem(formKey);
+    });
+}
 </script>
 {% endblock %}
